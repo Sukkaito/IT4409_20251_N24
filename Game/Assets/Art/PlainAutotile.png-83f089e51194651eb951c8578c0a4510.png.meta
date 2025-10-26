@@ -1,0 +1,3678 @@
+fileFormatVersion: 2
+guid: b331abde138549b40b739f03bd61a14f
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: PlainAutotile.png-83f089e51194651eb951c8578c0a4510_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 128
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 577819177cd346140803eaffa54edcba
+      internalID: -880100868
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlainAutotile.png-83f089e51194651eb951c8578c0a4510_1
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 128
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 415074df0ea996e44974038ce870c5c0
+      internalID: 364757902
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlainAutotile.png-83f089e51194651eb951c8578c0a4510_2
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 128
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 95ff96b77d32c2e45aa0d7e82d27f62d
+      internalID: 874469009
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlainAutotile.png-83f089e51194651eb951c8578c0a4510_3
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 128
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: febd2a2dfc6c9c647a435475c37482e2
+      internalID: -1851193693
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlainAutotile.png-83f089e51194651eb951c8578c0a4510_4
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 128
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 645cd5b900664a541aa0cdb5c7fb97d4
+      internalID: -931600297
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlainAutotile.png-83f089e51194651eb951c8578c0a4510_5
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 128
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c1b3a0c5f257224bbbb01dbda37e13f
+      internalID: -125814870
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlainAutotile.png-83f089e51194651eb951c8578c0a4510_6
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 128
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: afdcc987d7f515d4bb6f9cd61301aeea
+      internalID: -843586711
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlainAutotile.png-83f089e51194651eb951c8578c0a4510_7
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 128
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: efaf96cfb935b42498da1b129677d061
+      internalID: -1392924807
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlainAutotile.png-83f089e51194651eb951c8578c0a4510_8
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 128
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab399ecce7797924180faf02691c6ebf
+      internalID: -1838160017
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlainAutotile.png-83f089e51194651eb951c8578c0a4510_9
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 128
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0af06a638153e1b40be9847e759c2d0b
+      internalID: -396115425
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlainAutotile.png-83f089e51194651eb951c8578c0a4510_10
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 128
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 25d22619c14be1f458aa6e22f0ff136c
+      internalID: -1015418000
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlainAutotile.png-83f089e51194651eb951c8578c0a4510_11
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 128
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 48c56ed3996c02b4b814b001816e3764
+      internalID: 1702882882
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlainAutotile.png-83f089e51194651eb951c8578c0a4510_12
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 128
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 769c2b0b8ac8c514da95874869630eb5
+      internalID: -601876348
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlainAutotile.png-83f089e51194651eb951c8578c0a4510_13
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 128
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0832e3007ddc8b44986c5a759e2b0c6c
+      internalID: 1377674515
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlainAutotile.png-83f089e51194651eb951c8578c0a4510_14
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 128
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 964b94c5ec070ec49ae74a4aa5457e6b
+      internalID: 991309732
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlainAutotile.png-83f089e51194651eb951c8578c0a4510_15
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 128
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ae322ebf091b6d4597d35c9721180e5
+      internalID: 2135522304
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlainAutotile.png-83f089e51194651eb951c8578c0a4510_16
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 128
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d48a5853978a6044a31edb9f9f7f9a0
+      internalID: -1824894664
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlainAutotile.png-83f089e51194651eb951c8578c0a4510_17
+      rect:
+        serializedVersion: 2
+        x: 368
+        y: 128
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f90ef028c1f6e654a80b03646e68cf81
+      internalID: -812040749
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlainAutotile.png-83f089e51194651eb951c8578c0a4510_18
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 128
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1dece3071043c8a418eaf4dae8ef0f6c
+      internalID: 923765767
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlainAutotile.png-83f089e51194651eb951c8578c0a4510_19
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 128
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 413979ffc0c57fd468f6a5a68fee397d
+      internalID: 815329518
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlainAutotile.png-83f089e51194651eb951c8578c0a4510_20
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 128
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bcadaa211e2886e419bda59f1dc0aa32
+      internalID: 666070602
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlainAutotile.png-83f089e51194651eb951c8578c0a4510_21
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 112
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b8cd85f99c10ad04ca86a1f0148cc15a
+      internalID: -2022276357
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlainAutotile.png-83f089e51194651eb951c8578c0a4510_22
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 112
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce89a78638e27a54590a9523bad0d088
+      internalID: -2127562619
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlainAutotile.png-83f089e51194651eb951c8578c0a4510_23
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 112
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53bea721402b972468d9677a785cb2fb
+      internalID: 748386892
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlainAutotile.png-83f089e51194651eb951c8578c0a4510_24
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 112
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1348fb5502dd60f4ba3aa68ac7f4a27f
+      internalID: 1647902102
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlainAutotile.png-83f089e51194651eb951c8578c0a4510_25
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 112
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed16460797199a648a3be03d74b6c07c
+      internalID: -1837093736
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlainAutotile.png-83f089e51194651eb951c8578c0a4510_26
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 112
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 50984a67a93402b46802bd603dcd7849
+      internalID: 1651839382
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlainAutotile.png-83f089e51194651eb951c8578c0a4510_27
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 112
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eedd6777472307843806bece828f43a5
+      internalID: -1248008563
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlainAutotile.png-83f089e51194651eb951c8578c0a4510_28
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 112
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 452a2366819db3c4bbff559cbed9d742
+      internalID: -853725632
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlainAutotile.png-83f089e51194651eb951c8578c0a4510_29
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 112
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7151862ee84170842ae8498704d789ab
+      internalID: -242621401
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlainAutotile.png-83f089e51194651eb951c8578c0a4510_30
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 112
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b5619d1456f2cc74d80b0a71b02ed287
+      internalID: 2008389432
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlainAutotile.png-83f089e51194651eb951c8578c0a4510_31
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 112
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 448e9894c63d380458b8c2aab42bea3a
+      internalID: -601449646
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlainAutotile.png-83f089e51194651eb951c8578c0a4510_32
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 112
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d68a14f82a7478644aa16d3a22d2f069
+      internalID: -292553299
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlainAutotile.png-83f089e51194651eb951c8578c0a4510_33
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 112
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cde8d33fc2905954888f3c1ff194f18d
+      internalID: 1947239927
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlainAutotile.png-83f089e51194651eb951c8578c0a4510_34
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 112
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 73849398c17f0604db6c3a8e7033a407
+      internalID: -2095003559
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlainAutotile.png-83f089e51194651eb951c8578c0a4510_35
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 112
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 469350763abb32a4fb1a4e06717b0453
+      internalID: 1272841715
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlainAutotile.png-83f089e51194651eb951c8578c0a4510_36
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 112
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b023994738c64554c9e1bd364706fe41
+      internalID: 822941940
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlainAutotile.png-83f089e51194651eb951c8578c0a4510_37
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 112
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b706a77a309c284a9d08d9363b5057b
+      internalID: -250510892
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlainAutotile.png-83f089e51194651eb951c8578c0a4510_38
+      rect:
+        serializedVersion: 2
+        x: 304
+        y: 112
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f4e81b258bd4234eadfda93124afcd0
+      internalID: 875293800
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlainAutotile.png-83f089e51194651eb951c8578c0a4510_39
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 112
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a8b1d3b2a9c013542aa441c46cc49829
+      internalID: -1404127596
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlainAutotile.png-83f089e51194651eb951c8578c0a4510_40
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 112
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c729790216648374bad6e5091cead78e
+      internalID: 351796539
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlainAutotile.png-83f089e51194651eb951c8578c0a4510_41
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 112
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d39ca9a84b3aa074f87da4e3545a98ff
+      internalID: 1442071499
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlainAutotile.png-83f089e51194651eb951c8578c0a4510_42
+      rect:
+        serializedVersion: 2
+        x: 368
+        y: 112
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d39eb9f5e1d204f4da126725e0594be7
+      internalID: -2078708112
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlainAutotile.png-83f089e51194651eb951c8578c0a4510_43
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 112
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4eb704b3f899ed34da1d30da7ee0939d
+      internalID: -1162769107
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlainAutotile.png-83f089e51194651eb951c8578c0a4510_44
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 112
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 36b3597661c77d2428223addfa805a3b
+      internalID: 143096316
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlainAutotile.png-83f089e51194651eb951c8578c0a4510_45
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 112
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf4ee8a18d66aff4eb4e1b1e642cd400
+      internalID: -423877369
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlainAutotile.png-83f089e51194651eb951c8578c0a4510_46
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 112
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ca48b182ea9d9c4fbdf976e2419f0df
+      internalID: 435412122
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlainAutotile.png-83f089e51194651eb951c8578c0a4510_47
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 96
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 29ed6d0f9b1ea2a44a4b46caa1e1a0ad
+      internalID: 256611821
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlainAutotile.png-83f089e51194651eb951c8578c0a4510_48
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 96
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 11c0280f012893147b536ee410338877
+      internalID: 2121571655
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlainAutotile.png-83f089e51194651eb951c8578c0a4510_49
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 96
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b7dff34f9fd99fb4eb5bf4dd9ce80092
+      internalID: 881551289
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlainAutotile.png-83f089e51194651eb951c8578c0a4510_50
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 96
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 68b2176a0891e7f45bfd9ae5f6ffb96e
+      internalID: -892691320
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlainAutotile.png-83f089e51194651eb951c8578c0a4510_51
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 96
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 70e77f8a3302d3749aeb27a7cbc27026
+      internalID: -1054775343
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlainAutotile.png-83f089e51194651eb951c8578c0a4510_52
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 96
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f6516f4ea8639b47b453ebd7a990c6e
+      internalID: -1507404467
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlainAutotile.png-83f089e51194651eb951c8578c0a4510_53
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 96
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f871cf4ce85c1a4f91b0184d6b8eccf
+      internalID: -2010765668
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlainAutotile.png-83f089e51194651eb951c8578c0a4510_54
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 96
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a0a763270938664884f588326eb685e
+      internalID: -2077877551
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlainAutotile.png-83f089e51194651eb951c8578c0a4510_55
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 96
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c59c2f604da54874d870b33d7b20fd9f
+      internalID: 57671078
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlainAutotile.png-83f089e51194651eb951c8578c0a4510_56
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 96
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 48e44feb3868153468b5e0caa977353c
+      internalID: -148778893
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlainAutotile.png-83f089e51194651eb951c8578c0a4510_57
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 96
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0095618ebca04824db58790b0e6307bd
+      internalID: -1600618966
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlainAutotile.png-83f089e51194651eb951c8578c0a4510_58
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 96
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 76360c36d39474c4a94a8debd1ae2c73
+      internalID: -1382282663
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlainAutotile.png-83f089e51194651eb951c8578c0a4510_59
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 96
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f75cf300740de742a40b907ae1378e9
+      internalID: 1112634533
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlainAutotile.png-83f089e51194651eb951c8578c0a4510_60
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 96
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f864044b6be9ad94eafd9181824cbed8
+      internalID: -1163314437
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlainAutotile.png-83f089e51194651eb951c8578c0a4510_61
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 96
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cdb596330673c5d41aeae17a823b399a
+      internalID: -492128015
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlainAutotile.png-83f089e51194651eb951c8578c0a4510_62
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 96
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 36fa1ae50943c504796ba3009805922b
+      internalID: -1972509051
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlainAutotile.png-83f089e51194651eb951c8578c0a4510_63
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 96
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b766297f1bbd7714a8fd00ed620b2ee5
+      internalID: -1338892246
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlainAutotile.png-83f089e51194651eb951c8578c0a4510_64
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 96
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 095a76c102b05aa4fb9d5ec0a0cfd22c
+      internalID: 2013135945
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlainAutotile.png-83f089e51194651eb951c8578c0a4510_65
+      rect:
+        serializedVersion: 2
+        x: 368
+        y: 96
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d55403fc52020d4db70ffe5c48c23b2
+      internalID: -1348579047
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlainAutotile.png-83f089e51194651eb951c8578c0a4510_66
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 96
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f1fdac26d9b3ec40953541bcd1bb9dd
+      internalID: 410023111
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlainAutotile.png-83f089e51194651eb951c8578c0a4510_67
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 96
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a483f344ce43d3a4982b921889e8063a
+      internalID: 13427275
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlainAutotile.png-83f089e51194651eb951c8578c0a4510_68
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 80
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 46d6427125329ae44aad624a87f100fd
+      internalID: 214181210
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlainAutotile.png-83f089e51194651eb951c8578c0a4510_69
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 80
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f67a820e0b1c70740926b160a05b8430
+      internalID: 1478116273
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlainAutotile.png-83f089e51194651eb951c8578c0a4510_70
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 80
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d9bf9e70ec287aa4d8f468204c4d76d0
+      internalID: -1878641590
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlainAutotile.png-83f089e51194651eb951c8578c0a4510_71
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 80
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a045a201783a52e46b1e1518f01ab3c3
+      internalID: -2132330620
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlainAutotile.png-83f089e51194651eb951c8578c0a4510_72
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 80
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e1da8abca0b700049904c684974a1a49
+      internalID: 640703288
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlainAutotile.png-83f089e51194651eb951c8578c0a4510_73
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 80
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e82f740e2233d94e89996cb7973e602
+      internalID: -117426556
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlainAutotile.png-83f089e51194651eb951c8578c0a4510_74
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 80
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c3144bcde981174c916706db3851352
+      internalID: -687052361
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlainAutotile.png-83f089e51194651eb951c8578c0a4510_75
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 80
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f0a1ada7d90948741bde00d5865b0f7c
+      internalID: 763722339
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlainAutotile.png-83f089e51194651eb951c8578c0a4510_76
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 80
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53a474b780771694f92716992a29f903
+      internalID: 668556816
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlainAutotile.png-83f089e51194651eb951c8578c0a4510_77
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 80
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f4b4e4d22910b5643b0b19f08454e3bc
+      internalID: -108200354
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlainAutotile.png-83f089e51194651eb951c8578c0a4510_78
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 80
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fcdb76d8a5f268d408413ecce8fe9f63
+      internalID: 731094735
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlainAutotile.png-83f089e51194651eb951c8578c0a4510_79
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 80
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf1a52b80577cc94f98efee3a2ded0ab
+      internalID: 1268889213
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlainAutotile.png-83f089e51194651eb951c8578c0a4510_80
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 80
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd2da3029a7ed6d40b283a8826c296c0
+      internalID: -1267005985
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlainAutotile.png-83f089e51194651eb951c8578c0a4510_81
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 80
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2233dcceb03906b4ba486db9ea0bc73d
+      internalID: -1155583632
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlainAutotile.png-83f089e51194651eb951c8578c0a4510_82
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 80
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a562fbcc30913a644a4b9c666ebd9785
+      internalID: -637123517
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlainAutotile.png-83f089e51194651eb951c8578c0a4510_83
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 80
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 63d8fe7d5f3c0464ea77c71d0d73f8c3
+      internalID: 1347902269
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlainAutotile.png-83f089e51194651eb951c8578c0a4510_84
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 80
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d183161b9b799044bb689725373e845
+      internalID: 485248546
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlainAutotile.png-83f089e51194651eb951c8578c0a4510_85
+      rect:
+        serializedVersion: 2
+        x: 304
+        y: 80
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3c935383bab20a48a0745091cc0bd35
+      internalID: -663634018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlainAutotile.png-83f089e51194651eb951c8578c0a4510_86
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 80
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c88248eff5681e45b919d04375db85a
+      internalID: -1395391240
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlainAutotile.png-83f089e51194651eb951c8578c0a4510_87
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 64
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 869dcd741af361c469028b7fcd2fa234
+      internalID: 1951602363
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlainAutotile.png-83f089e51194651eb951c8578c0a4510_88
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 64
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f251fda50f0651489f253b577da24e6
+      internalID: -1604277406
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlainAutotile.png-83f089e51194651eb951c8578c0a4510_89
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 64
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c51afcbfe0d180b418fe5b09a6a21095
+      internalID: -716290667
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlainAutotile.png-83f089e51194651eb951c8578c0a4510_90
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 64
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 698f23055192e804b85abdd6a3379320
+      internalID: -1218164722
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlainAutotile.png-83f089e51194651eb951c8578c0a4510_91
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 64
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99ada58550535da429dabc105d91fbbd
+      internalID: 970568831
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlainAutotile.png-83f089e51194651eb951c8578c0a4510_92
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 64
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a1b3004def1411438209a175f57fd46
+      internalID: 238386139
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlainAutotile.png-83f089e51194651eb951c8578c0a4510_93
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 64
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c551bc524dd5994ebcfbcbe7c52aca4
+      internalID: -533479363
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlainAutotile.png-83f089e51194651eb951c8578c0a4510_94
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 64
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 243c18456eeed074da220713738ee8fc
+      internalID: 1832792858
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlainAutotile.png-83f089e51194651eb951c8578c0a4510_95
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 64
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eff4724984635234f8349ad0b0570bf3
+      internalID: -757243122
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlainAutotile.png-83f089e51194651eb951c8578c0a4510_96
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 64
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da9725bc4a1e55844aa14d4a8a53fc9b
+      internalID: 1402196833
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlainAutotile.png-83f089e51194651eb951c8578c0a4510_97
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 64
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb718a96210f9fd44b89b40ea5758842
+      internalID: -1594266544
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlainAutotile.png-83f089e51194651eb951c8578c0a4510_98
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 64
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3a94fef8f4f602429192178412807ff
+      internalID: 1509617092
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlainAutotile.png-83f089e51194651eb951c8578c0a4510_99
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 44b7e65415936e2459ae79616e5291cb
+      internalID: 1756816258
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlainAutotile.png-83f089e51194651eb951c8578c0a4510_100
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 78c5af957de7a9740b08368b04493937
+      internalID: 34578172
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlainAutotile.png-83f089e51194651eb951c8578c0a4510_101
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c8397f067f94b6b4ca043e66550e0f4b
+      internalID: -2051863758
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlainAutotile.png-83f089e51194651eb951c8578c0a4510_102
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a39babb2b7a8f348be743ef5e0ef3ec
+      internalID: 724349691
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlainAutotile.png-83f089e51194651eb951c8578c0a4510_103
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b477b770a5193a44d9a12ace60a2d048
+      internalID: 1080812698
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlainAutotile.png-83f089e51194651eb951c8578c0a4510_104
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 308801e0f58c78c4e875bfc15765717c
+      internalID: 627482475
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlainAutotile.png-83f089e51194651eb951c8578c0a4510_105
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23dcb6b496662f24590180b17ab4c59e
+      internalID: -1018066483
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlainAutotile.png-83f089e51194651eb951c8578c0a4510_106
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41e58718d5da38d42926c5f5418232d2
+      internalID: -2033069505
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlainAutotile.png-83f089e51194651eb951c8578c0a4510_107
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea5c6a91d16a13c41a892037dd5554cb
+      internalID: 1788733771
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlainAutotile.png-83f089e51194651eb951c8578c0a4510_108
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1770ae5f2ffff6f4597a2590a5b61484
+      internalID: -696642876
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlainAutotile.png-83f089e51194651eb951c8578c0a4510_109
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cbef8dcf81f79414fa8feadf3a9e53e4
+      internalID: 69257228
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlainAutotile.png-83f089e51194651eb951c8578c0a4510_110
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 28e986c13bfdbfa458962738ef543e24
+      internalID: 445383470
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlainAutotile.png-83f089e51194651eb951c8578c0a4510_111
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 941ac5e7cfc134b45a645b2986d8c452
+      internalID: 457133752
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlainAutotile.png-83f089e51194651eb951c8578c0a4510_112
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 35928b9d5a689da438d1a973b60223ae
+      internalID: 2129970622
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlainAutotile.png-83f089e51194651eb951c8578c0a4510_113
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 17925b52a066daf41822bda40de882f0
+      internalID: -1492022126
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlainAutotile.png-83f089e51194651eb951c8578c0a4510_114
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be8a61144a8f1c54f9d22858ee81fc83
+      internalID: 570926078
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlainAutotile.png-83f089e51194651eb951c8578c0a4510_115
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad0a28548dc94b6478f4fedb8003e7d7
+      internalID: 1600455049
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlainAutotile.png-83f089e51194651eb951c8578c0a4510_116
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e76f3dd4a0186441834ffc188729062
+      internalID: -1701153327
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlainAutotile.png-83f089e51194651eb951c8578c0a4510_117
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 73f383a3598b6684a9513e530378c4bd
+      internalID: -24770276
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlainAutotile.png-83f089e51194651eb951c8578c0a4510_118
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 98fcc67351e0f9040922792829d7772e
+      internalID: -1757458142
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlainAutotile.png-83f089e51194651eb951c8578c0a4510_119
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb2e123f17a71b34db7d4afe44be3b86
+      internalID: 803911371
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlainAutotile.png-83f089e51194651eb951c8578c0a4510_120
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 09506ba1d6d2318438b8a0be71083d75
+      internalID: -829111227
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlainAutotile.png-83f089e51194651eb951c8578c0a4510_121
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a428b5c0573d29f4eb3b5c0bd42c49a1
+      internalID: 19409980
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlainAutotile.png-83f089e51194651eb951c8578c0a4510_122
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a27a1e9c525b44d4cac8362c8413fb96
+      internalID: 275234499
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlainAutotile.png-83f089e51194651eb951c8578c0a4510_123
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0319b9bb9ac09be439950bed99aadf0e
+      internalID: 755251847
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlainAutotile.png-83f089e51194651eb951c8578c0a4510_124
+      rect:
+        serializedVersion: 2
+        x: 304
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b2472226ad0a4b4f859955386304229
+      internalID: 1558928828
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlainAutotile.png-83f089e51194651eb951c8578c0a4510_125
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5372e1ff0cbc5ef4f82348acc6068f5a
+      internalID: 519793382
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlainAutotile.png-83f089e51194651eb951c8578c0a4510_126
+      rect:
+        serializedVersion: 2
+        x: 368
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 91cae498626b6c24dade8ec78160e39c
+      internalID: 1965636282
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlainAutotile.png-83f089e51194651eb951c8578c0a4510_127
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c501096e3bc87d34da4f9e9a0be87dea
+      internalID: 162918934
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlainAutotile.png-83f089e51194651eb951c8578c0a4510_128
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 436c6aecb1bb2374da4cdab200cac037
+      internalID: 1716859398
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlainAutotile.png-83f089e51194651eb951c8578c0a4510_129
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 79b5544ae798aac42a6e983c6fb43647
+      internalID: -780953439
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlainAutotile.png-83f089e51194651eb951c8578c0a4510_130
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 33b042a195865ef4b922b04ace5063fa
+      internalID: -1706776347
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlainAutotile.png-83f089e51194651eb951c8578c0a4510_131
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 83f0ab1948c856a4a8299086f3e5692b
+      internalID: 239648209
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlainAutotile.png-83f089e51194651eb951c8578c0a4510_132
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b864df5957290d6419647837dfebb49b
+      internalID: -776937286
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlainAutotile.png-83f089e51194651eb951c8578c0a4510_133
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 357029a7fdf130047a7162fdcfe93dcd
+      internalID: -1876356513
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlainAutotile.png-83f089e51194651eb951c8578c0a4510_134
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 83210e858dee73a408fe6556d0f4a54f
+      internalID: 377578637
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlainAutotile.png-83f089e51194651eb951c8578c0a4510_135
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47185ada83d20554a8dd37b19ee73752
+      internalID: -1111435641
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlainAutotile.png-83f089e51194651eb951c8578c0a4510_136
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6fb5c8adb51172f4cacb2c79bedaaedd
+      internalID: 1619701250
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlainAutotile.png-83f089e51194651eb951c8578c0a4510_137
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 057cf6ffe8145e14da4c3a50bde7cf0c
+      internalID: 1208699636
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlainAutotile.png-83f089e51194651eb951c8578c0a4510_138
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b7244ab1fd8e80f4a94704ca03b3acf1
+      internalID: 564827650
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlainAutotile.png-83f089e51194651eb951c8578c0a4510_139
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e80f662c58a0b8342a3e5af090b4e8d4
+      internalID: -2111858376
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlainAutotile.png-83f089e51194651eb951c8578c0a4510_140
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 17b1a66156248b343b34db5eb8c29288
+      internalID: 403970372
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlainAutotile.png-83f089e51194651eb951c8578c0a4510_141
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fdd7ff5fffe21f7408ebf0c85cfcbaff
+      internalID: 643831369
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlainAutotile.png-83f089e51194651eb951c8578c0a4510_142
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 78f9a4536d957a942bc1e31228c62567
+      internalID: -2078728099
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlainAutotile.png-83f089e51194651eb951c8578c0a4510_143
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c07ce57865902604f9c427ce18171413
+      internalID: -2031300040
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlainAutotile.png-83f089e51194651eb951c8578c0a4510_144
+      rect:
+        serializedVersion: 2
+        x: 304
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c6ae32e52ad94342884e676011cb580
+      internalID: -1207904306
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlainAutotile.png-83f089e51194651eb951c8578c0a4510_145
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8977f6cbe0640e94d8223f26bfce970e
+      internalID: 1998614892
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlainAutotile.png-83f089e51194651eb951c8578c0a4510_146
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a44828d5bc81a66478a5f541cb0767d4
+      internalID: -1795689098
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlainAutotile.png-83f089e51194651eb951c8578c0a4510_147
+      rect:
+        serializedVersion: 2
+        x: 368
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 31bde85f0352b504fa137893d5da8335
+      internalID: 1235360889
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlainAutotile.png-83f089e51194651eb951c8578c0a4510_148
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1afb2371a9d7baa4eabdd8d2905561ba
+      internalID: -1626428120
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlainAutotile.png-83f089e51194651eb951c8578c0a4510_149
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e4180977677041744aa7cd8b7ceea4cc
+      internalID: -405772525
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlainAutotile.png-83f089e51194651eb951c8578c0a4510_150
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e22a93421be56dd478fb45fb07ea79cd
+      internalID: 1848532988
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlainAutotile.png-83f089e51194651eb951c8578c0a4510_151
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aefd6466c2561db4fa5cb883719b937e
+      internalID: -642931822
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlainAutotile.png-83f089e51194651eb951c8578c0a4510_152
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 76e41ffd5d6dba54ea1ca99d2ea93882
+      internalID: 901315642
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlainAutotile.png-83f089e51194651eb951c8578c0a4510_153
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 467ea6c7878a642419c0f078703e4723
+      internalID: -309911666
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlainAutotile.png-83f089e51194651eb951c8578c0a4510_154
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bce5b42622ef3cb43a96ddf199c42083
+      internalID: -1493433925
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlainAutotile.png-83f089e51194651eb951c8578c0a4510_155
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d1b727a07415cd4e8f310227354f92c
+      internalID: 431772565
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlainAutotile.png-83f089e51194651eb951c8578c0a4510_156
+      rect:
+        serializedVersion: 2
+        x: 304
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: add9476c668c14748a4604ba5aa2e697
+      internalID: 697086329
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlainAutotile.png-83f089e51194651eb951c8578c0a4510_157
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c71e855a05c35b146920eee6e2ecc3d1
+      internalID: 2009648028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlainAutotile.png-83f089e51194651eb951c8578c0a4510_158
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d5ce11f08dd48ac45b9b2ba27cb0c16d
+      internalID: 28988351
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlainAutotile.png-83f089e51194651eb951c8578c0a4510_159
+      rect:
+        serializedVersion: 2
+        x: 368
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3eb50baef4ef19c4ca9f783ca8ebd685
+      internalID: 1470626238
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlainAutotile.png-83f089e51194651eb951c8578c0a4510_160
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e533ea0f8c5377a41a0d5d43fe8e52ff
+      internalID: -1180958396
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlainAutotile.png-83f089e51194651eb951c8578c0a4510_161
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 93c661c0675753749992cf49113049d9
+      internalID: -1675199737
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      PlainAutotile.png-83f089e51194651eb951c8578c0a4510_0: -880100868
+      PlainAutotile.png-83f089e51194651eb951c8578c0a4510_1: 364757902
+      PlainAutotile.png-83f089e51194651eb951c8578c0a4510_10: -1015418000
+      PlainAutotile.png-83f089e51194651eb951c8578c0a4510_100: 34578172
+      PlainAutotile.png-83f089e51194651eb951c8578c0a4510_101: -2051863758
+      PlainAutotile.png-83f089e51194651eb951c8578c0a4510_102: 724349691
+      PlainAutotile.png-83f089e51194651eb951c8578c0a4510_103: 1080812698
+      PlainAutotile.png-83f089e51194651eb951c8578c0a4510_104: 627482475
+      PlainAutotile.png-83f089e51194651eb951c8578c0a4510_105: -1018066483
+      PlainAutotile.png-83f089e51194651eb951c8578c0a4510_106: -2033069505
+      PlainAutotile.png-83f089e51194651eb951c8578c0a4510_107: 1788733771
+      PlainAutotile.png-83f089e51194651eb951c8578c0a4510_108: -696642876
+      PlainAutotile.png-83f089e51194651eb951c8578c0a4510_109: 69257228
+      PlainAutotile.png-83f089e51194651eb951c8578c0a4510_11: 1702882882
+      PlainAutotile.png-83f089e51194651eb951c8578c0a4510_110: 445383470
+      PlainAutotile.png-83f089e51194651eb951c8578c0a4510_111: 457133752
+      PlainAutotile.png-83f089e51194651eb951c8578c0a4510_112: 2129970622
+      PlainAutotile.png-83f089e51194651eb951c8578c0a4510_113: -1492022126
+      PlainAutotile.png-83f089e51194651eb951c8578c0a4510_114: 570926078
+      PlainAutotile.png-83f089e51194651eb951c8578c0a4510_115: 1600455049
+      PlainAutotile.png-83f089e51194651eb951c8578c0a4510_116: -1701153327
+      PlainAutotile.png-83f089e51194651eb951c8578c0a4510_117: -24770276
+      PlainAutotile.png-83f089e51194651eb951c8578c0a4510_118: -1757458142
+      PlainAutotile.png-83f089e51194651eb951c8578c0a4510_119: 803911371
+      PlainAutotile.png-83f089e51194651eb951c8578c0a4510_12: -601876348
+      PlainAutotile.png-83f089e51194651eb951c8578c0a4510_120: -829111227
+      PlainAutotile.png-83f089e51194651eb951c8578c0a4510_121: 19409980
+      PlainAutotile.png-83f089e51194651eb951c8578c0a4510_122: 275234499
+      PlainAutotile.png-83f089e51194651eb951c8578c0a4510_123: 755251847
+      PlainAutotile.png-83f089e51194651eb951c8578c0a4510_124: 1558928828
+      PlainAutotile.png-83f089e51194651eb951c8578c0a4510_125: 519793382
+      PlainAutotile.png-83f089e51194651eb951c8578c0a4510_126: 1965636282
+      PlainAutotile.png-83f089e51194651eb951c8578c0a4510_127: 162918934
+      PlainAutotile.png-83f089e51194651eb951c8578c0a4510_128: 1716859398
+      PlainAutotile.png-83f089e51194651eb951c8578c0a4510_129: -780953439
+      PlainAutotile.png-83f089e51194651eb951c8578c0a4510_13: 1377674515
+      PlainAutotile.png-83f089e51194651eb951c8578c0a4510_130: -1706776347
+      PlainAutotile.png-83f089e51194651eb951c8578c0a4510_131: 239648209
+      PlainAutotile.png-83f089e51194651eb951c8578c0a4510_132: -776937286
+      PlainAutotile.png-83f089e51194651eb951c8578c0a4510_133: -1876356513
+      PlainAutotile.png-83f089e51194651eb951c8578c0a4510_134: 377578637
+      PlainAutotile.png-83f089e51194651eb951c8578c0a4510_135: -1111435641
+      PlainAutotile.png-83f089e51194651eb951c8578c0a4510_136: 1619701250
+      PlainAutotile.png-83f089e51194651eb951c8578c0a4510_137: 1208699636
+      PlainAutotile.png-83f089e51194651eb951c8578c0a4510_138: 564827650
+      PlainAutotile.png-83f089e51194651eb951c8578c0a4510_139: -2111858376
+      PlainAutotile.png-83f089e51194651eb951c8578c0a4510_14: 991309732
+      PlainAutotile.png-83f089e51194651eb951c8578c0a4510_140: 403970372
+      PlainAutotile.png-83f089e51194651eb951c8578c0a4510_141: 643831369
+      PlainAutotile.png-83f089e51194651eb951c8578c0a4510_142: -2078728099
+      PlainAutotile.png-83f089e51194651eb951c8578c0a4510_143: -2031300040
+      PlainAutotile.png-83f089e51194651eb951c8578c0a4510_144: -1207904306
+      PlainAutotile.png-83f089e51194651eb951c8578c0a4510_145: 1998614892
+      PlainAutotile.png-83f089e51194651eb951c8578c0a4510_146: -1795689098
+      PlainAutotile.png-83f089e51194651eb951c8578c0a4510_147: 1235360889
+      PlainAutotile.png-83f089e51194651eb951c8578c0a4510_148: -1626428120
+      PlainAutotile.png-83f089e51194651eb951c8578c0a4510_149: -405772525
+      PlainAutotile.png-83f089e51194651eb951c8578c0a4510_15: 2135522304
+      PlainAutotile.png-83f089e51194651eb951c8578c0a4510_150: 1848532988
+      PlainAutotile.png-83f089e51194651eb951c8578c0a4510_151: -642931822
+      PlainAutotile.png-83f089e51194651eb951c8578c0a4510_152: 901315642
+      PlainAutotile.png-83f089e51194651eb951c8578c0a4510_153: -309911666
+      PlainAutotile.png-83f089e51194651eb951c8578c0a4510_154: -1493433925
+      PlainAutotile.png-83f089e51194651eb951c8578c0a4510_155: 431772565
+      PlainAutotile.png-83f089e51194651eb951c8578c0a4510_156: 697086329
+      PlainAutotile.png-83f089e51194651eb951c8578c0a4510_157: 2009648028
+      PlainAutotile.png-83f089e51194651eb951c8578c0a4510_158: 28988351
+      PlainAutotile.png-83f089e51194651eb951c8578c0a4510_159: 1470626238
+      PlainAutotile.png-83f089e51194651eb951c8578c0a4510_16: -1824894664
+      PlainAutotile.png-83f089e51194651eb951c8578c0a4510_160: -1180958396
+      PlainAutotile.png-83f089e51194651eb951c8578c0a4510_161: -1675199737
+      PlainAutotile.png-83f089e51194651eb951c8578c0a4510_17: -812040749
+      PlainAutotile.png-83f089e51194651eb951c8578c0a4510_18: 923765767
+      PlainAutotile.png-83f089e51194651eb951c8578c0a4510_19: 815329518
+      PlainAutotile.png-83f089e51194651eb951c8578c0a4510_2: 874469009
+      PlainAutotile.png-83f089e51194651eb951c8578c0a4510_20: 666070602
+      PlainAutotile.png-83f089e51194651eb951c8578c0a4510_21: -2022276357
+      PlainAutotile.png-83f089e51194651eb951c8578c0a4510_22: -2127562619
+      PlainAutotile.png-83f089e51194651eb951c8578c0a4510_23: 748386892
+      PlainAutotile.png-83f089e51194651eb951c8578c0a4510_24: 1647902102
+      PlainAutotile.png-83f089e51194651eb951c8578c0a4510_25: -1837093736
+      PlainAutotile.png-83f089e51194651eb951c8578c0a4510_26: 1651839382
+      PlainAutotile.png-83f089e51194651eb951c8578c0a4510_27: -1248008563
+      PlainAutotile.png-83f089e51194651eb951c8578c0a4510_28: -853725632
+      PlainAutotile.png-83f089e51194651eb951c8578c0a4510_29: -242621401
+      PlainAutotile.png-83f089e51194651eb951c8578c0a4510_3: -1851193693
+      PlainAutotile.png-83f089e51194651eb951c8578c0a4510_30: 2008389432
+      PlainAutotile.png-83f089e51194651eb951c8578c0a4510_31: -601449646
+      PlainAutotile.png-83f089e51194651eb951c8578c0a4510_32: -292553299
+      PlainAutotile.png-83f089e51194651eb951c8578c0a4510_33: 1947239927
+      PlainAutotile.png-83f089e51194651eb951c8578c0a4510_34: -2095003559
+      PlainAutotile.png-83f089e51194651eb951c8578c0a4510_35: 1272841715
+      PlainAutotile.png-83f089e51194651eb951c8578c0a4510_36: 822941940
+      PlainAutotile.png-83f089e51194651eb951c8578c0a4510_37: -250510892
+      PlainAutotile.png-83f089e51194651eb951c8578c0a4510_38: 875293800
+      PlainAutotile.png-83f089e51194651eb951c8578c0a4510_39: -1404127596
+      PlainAutotile.png-83f089e51194651eb951c8578c0a4510_4: -931600297
+      PlainAutotile.png-83f089e51194651eb951c8578c0a4510_40: 351796539
+      PlainAutotile.png-83f089e51194651eb951c8578c0a4510_41: 1442071499
+      PlainAutotile.png-83f089e51194651eb951c8578c0a4510_42: -2078708112
+      PlainAutotile.png-83f089e51194651eb951c8578c0a4510_43: -1162769107
+      PlainAutotile.png-83f089e51194651eb951c8578c0a4510_44: 143096316
+      PlainAutotile.png-83f089e51194651eb951c8578c0a4510_45: -423877369
+      PlainAutotile.png-83f089e51194651eb951c8578c0a4510_46: 435412122
+      PlainAutotile.png-83f089e51194651eb951c8578c0a4510_47: 256611821
+      PlainAutotile.png-83f089e51194651eb951c8578c0a4510_48: 2121571655
+      PlainAutotile.png-83f089e51194651eb951c8578c0a4510_49: 881551289
+      PlainAutotile.png-83f089e51194651eb951c8578c0a4510_5: -125814870
+      PlainAutotile.png-83f089e51194651eb951c8578c0a4510_50: -892691320
+      PlainAutotile.png-83f089e51194651eb951c8578c0a4510_51: -1054775343
+      PlainAutotile.png-83f089e51194651eb951c8578c0a4510_52: -1507404467
+      PlainAutotile.png-83f089e51194651eb951c8578c0a4510_53: -2010765668
+      PlainAutotile.png-83f089e51194651eb951c8578c0a4510_54: -2077877551
+      PlainAutotile.png-83f089e51194651eb951c8578c0a4510_55: 57671078
+      PlainAutotile.png-83f089e51194651eb951c8578c0a4510_56: -148778893
+      PlainAutotile.png-83f089e51194651eb951c8578c0a4510_57: -1600618966
+      PlainAutotile.png-83f089e51194651eb951c8578c0a4510_58: -1382282663
+      PlainAutotile.png-83f089e51194651eb951c8578c0a4510_59: 1112634533
+      PlainAutotile.png-83f089e51194651eb951c8578c0a4510_6: -843586711
+      PlainAutotile.png-83f089e51194651eb951c8578c0a4510_60: -1163314437
+      PlainAutotile.png-83f089e51194651eb951c8578c0a4510_61: -492128015
+      PlainAutotile.png-83f089e51194651eb951c8578c0a4510_62: -1972509051
+      PlainAutotile.png-83f089e51194651eb951c8578c0a4510_63: -1338892246
+      PlainAutotile.png-83f089e51194651eb951c8578c0a4510_64: 2013135945
+      PlainAutotile.png-83f089e51194651eb951c8578c0a4510_65: -1348579047
+      PlainAutotile.png-83f089e51194651eb951c8578c0a4510_66: 410023111
+      PlainAutotile.png-83f089e51194651eb951c8578c0a4510_67: 13427275
+      PlainAutotile.png-83f089e51194651eb951c8578c0a4510_68: 214181210
+      PlainAutotile.png-83f089e51194651eb951c8578c0a4510_69: 1478116273
+      PlainAutotile.png-83f089e51194651eb951c8578c0a4510_7: -1392924807
+      PlainAutotile.png-83f089e51194651eb951c8578c0a4510_70: -1878641590
+      PlainAutotile.png-83f089e51194651eb951c8578c0a4510_71: -2132330620
+      PlainAutotile.png-83f089e51194651eb951c8578c0a4510_72: 640703288
+      PlainAutotile.png-83f089e51194651eb951c8578c0a4510_73: -117426556
+      PlainAutotile.png-83f089e51194651eb951c8578c0a4510_74: -687052361
+      PlainAutotile.png-83f089e51194651eb951c8578c0a4510_75: 763722339
+      PlainAutotile.png-83f089e51194651eb951c8578c0a4510_76: 668556816
+      PlainAutotile.png-83f089e51194651eb951c8578c0a4510_77: -108200354
+      PlainAutotile.png-83f089e51194651eb951c8578c0a4510_78: 731094735
+      PlainAutotile.png-83f089e51194651eb951c8578c0a4510_79: 1268889213
+      PlainAutotile.png-83f089e51194651eb951c8578c0a4510_8: -1838160017
+      PlainAutotile.png-83f089e51194651eb951c8578c0a4510_80: -1267005985
+      PlainAutotile.png-83f089e51194651eb951c8578c0a4510_81: -1155583632
+      PlainAutotile.png-83f089e51194651eb951c8578c0a4510_82: -637123517
+      PlainAutotile.png-83f089e51194651eb951c8578c0a4510_83: 1347902269
+      PlainAutotile.png-83f089e51194651eb951c8578c0a4510_84: 485248546
+      PlainAutotile.png-83f089e51194651eb951c8578c0a4510_85: -663634018
+      PlainAutotile.png-83f089e51194651eb951c8578c0a4510_86: -1395391240
+      PlainAutotile.png-83f089e51194651eb951c8578c0a4510_87: 1951602363
+      PlainAutotile.png-83f089e51194651eb951c8578c0a4510_88: -1604277406
+      PlainAutotile.png-83f089e51194651eb951c8578c0a4510_89: -716290667
+      PlainAutotile.png-83f089e51194651eb951c8578c0a4510_9: -396115425
+      PlainAutotile.png-83f089e51194651eb951c8578c0a4510_90: -1218164722
+      PlainAutotile.png-83f089e51194651eb951c8578c0a4510_91: 970568831
+      PlainAutotile.png-83f089e51194651eb951c8578c0a4510_92: 238386139
+      PlainAutotile.png-83f089e51194651eb951c8578c0a4510_93: -533479363
+      PlainAutotile.png-83f089e51194651eb951c8578c0a4510_94: 1832792858
+      PlainAutotile.png-83f089e51194651eb951c8578c0a4510_95: -757243122
+      PlainAutotile.png-83f089e51194651eb951c8578c0a4510_96: 1402196833
+      PlainAutotile.png-83f089e51194651eb951c8578c0a4510_97: -1594266544
+      PlainAutotile.png-83f089e51194651eb951c8578c0a4510_98: 1509617092
+      PlainAutotile.png-83f089e51194651eb951c8578c0a4510_99: 1756816258
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
