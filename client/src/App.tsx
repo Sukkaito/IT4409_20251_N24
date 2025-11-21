@@ -1,35 +1,79 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState, useEffect } from 'react';
+import { useGameClient } from './hooks/useGameClient';
+import { LoginScreen } from './components/LoginScreen';
+import './App.css';
 
 function App() {
-  const [count, setCount] = useState(0)
+  const {
+    playerId,
+    setPlayerName,
+    connectionError,
+    isConnecting,
+    joinPublicGame,
+    joinPrivateGame,
+    createPrivateRoom,
+    spectate,
+    isInLobby,
+  } = useGameClient();
+
+  const [showLogin, setShowLogin] = useState(true);
+  const [loginError, setLoginError] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
+
+  const handleJoinPublic = (name: string) => {
+    setIsLoading(true);
+    setLoginError('');
+    setPlayerName(name);
+    joinPublicGame(name);
+  };
+
+  const handleJoinPrivate = (name: string, roomCode: string) => {
+    setIsLoading(true);
+    setLoginError('');
+    setPlayerName(name);
+    joinPrivateGame(name, roomCode);
+  };
+
+  const handleCreatePrivate = (name: string) => {
+    setIsLoading(true);
+    setLoginError('');
+    setPlayerName(name);
+    createPrivateRoom(name);
+  };
+
+  const handleSpectate = (name: string) => {
+    setIsLoading(true);
+    setLoginError('');
+    setPlayerName(name);
+    spectate(name);
+  };
+
+  // Hide login screen when player joins lobby or game
+  useEffect(() => {
+    if ((playerId && isInLobby) || (playerId && !isInLobby && !showLogin)) {
+      setShowLogin(false);
+      setIsLoading(false);
+    }
+  }, [playerId, isInLobby, showLogin]);
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <div className="App">
+      {(
+        <LoginScreen
+          onJoinPublic={handleJoinPublic}
+          onJoinPrivate={handleJoinPrivate}
+          onCreatePrivate={handleCreatePrivate}
+          onSpectate={handleSpectate}
+          error={loginError}
+          isLoading={isLoading || isConnecting}
+          connectionError={connectionError}
+          isConnecting={isConnecting}
+        />
+      )}
+      
+    </div>
+  );
 }
 
-export default App
+export default App;
+
