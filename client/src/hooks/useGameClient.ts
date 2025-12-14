@@ -3,7 +3,7 @@ import { GameState, Player, Direction, Element, Arena, Camera, ServerMessage, Ti
 import { ImageLoader } from '../utils/imageLoader';
 import { GameRenderer } from '../utils/gameRenderer';
 
-const WS_URL = 'ws://localhost:8080';
+const WS_URL = import.meta.env.VITE_SERVER_WS || 'ws://localhost:8080';
 const CELL_SIZE = 48;
 const PLAYER_SIZE = 48;
 
@@ -27,6 +27,7 @@ export function useGameClient() {
   const [lobbyState, setLobbyState] = useState<any>(null);
   const [isInLobby, setIsInLobby] = useState(false);
   const [isReady, setIsReady] = useState(false);
+  const [isKicked, setIsKicked] = useState(false);
 
   const wsRef = useRef<WebSocket | null>(null);
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
@@ -202,6 +203,13 @@ export function useGameClient() {
                 content: 'Game starting!'
               }]);
               break;
+            case 'GAME_START_ERROR':
+              setConnectionError(message.message || 'Cannot start game. Please check all players have selected a character.');
+              setChatMessages(prev => [...prev, {
+                type: 'system',
+                content: message.message || 'Cannot start game. All players must select a character.'
+              }]);
+              break;
             case 'INIT':
               setPlayerId(message.playerId);
               setArena(message.arena);
@@ -235,6 +243,70 @@ export function useGameClient() {
                   serverTimestamp: message.timestamp
                 });
               }
+              break;
+            case 'GAME_STATE_DELTA':
+              // Apply delta update to current state
+              setGameState(prev => {
+                const newState = { ...prev };
+                const delta = message.delta;
+
+                // Update players
+                if (delta.players) {
+                  newState.players = { ...prev.players };
+                  for (const playerId in delta.players) {
+                    if (delta.players[playerId] === null) {
+                      // Player removed
+                      delete newState.players[playerId];
+                    } else {
+                      // Player updated or added
+                      newState.players[playerId] = delta.players[playerId];
+                    }
+                  }
+                }
+
+                // Update cells
+                if (delta.cells && delta.cells.length > 0) {
+                  // Ensure cells array exists
+                  if (!newState.cells || newState.cells.length === 0) {
+                    newState.cells = prev.cells;
+                  } else {
+                    newState.cells = prev.cells.map(row => [...row]);
+                  }
+                  
+                  delta.cells.forEach((cellUpdate: any) => {
+                    const { row, col, cell } = cellUpdate;
+                    if (newState.cells[row]) {
+                      newState.cells[row][col] = cell;
+                    }
+                  });
+                }
+
+                // Update game time and timer
+                // if (delta.gameTime !== undefined) {
+                //   newState.gameTime = delta.gameTime;
+                // }
+                if (delta.timeRemaining !== undefined) {
+                  newState.timeRemaining = delta.timeRemaining;
+                  if (message.timestamp) {
+                    setTimerSync({
+                      remainingMs: delta.timeRemaining,
+                      syncedAt: performance.now(),
+                      serverTimestamp: message.timestamp
+                    });
+                  }
+                }
+                if (delta.gameOver !== undefined) {
+                  newState.gameOver = delta.gameOver;
+                }
+                // if (delta.winnerId !== undefined) {
+                //   newState.winnerId = delta.winnerId;
+                // }
+                if (delta.winnerName !== undefined) {
+                  newState.winnerName = delta.winnerName;
+                }
+
+                return newState;
+              });
               break;
             case 'PLAYER_JOINED':
               setChatMessages(prev => [...prev, {
@@ -277,11 +349,15 @@ export function useGameClient() {
               pendingInitPayloadRef.current = null;
               break;
             case 'JOIN_ERROR':
-              setConnectionError(message.error === 'ROOM_NOT_FOUND' 
-                ? 'Room not found. Please check the room code.' 
-                : message.error === 'ROOM_FULL'
-                ? 'Room is full.'
-                : 'Failed to join room.');
+              if (message.error === 'ROOM_NOT_FOUND') {
+                setConnectionError('Room not found. Please check the room code.');
+              } else if (message.error === 'GAME_STARTED') {
+                setConnectionError('Cannot join room. The game has already started.');
+              } else if (message.error === 'ROOM_FULL') {
+                setConnectionError('Room is full. Please try another room.');
+              } else {
+                setConnectionError('Failed to join room.');
+              }
               pendingInitPayloadRef.current = null;
               break;
           }
@@ -294,6 +370,16 @@ export function useGameClient() {
         console.log('Disconnected from server', event.code, event.reason);
         setIsConnecting(false);
         wsRef.current = null;
+        
+        // Check if player was kicked
+        if (event.reason === 'Kicked by host' || event.code === 1000 && event.reason?.includes('Kicked')) {
+          setIsKicked(true);
+          setIsInLobby(false);
+          setLobbyState(null);
+          setConnectionError('You have been kicked from the room by the host.');
+          pendingInitPayloadRef.current = null;
+          return; // Don't reconnect if kicked
+        }
         
         // Only auto-reconnect if we had a playerId (were actually playing)
         if (playerId && event.code !== 1000) {
@@ -886,6 +972,8 @@ export function useGameClient() {
     chatMessages,
     connectionError,
     isConnecting,
+    isKicked,
+    setIsKicked,
     joinGame,
     joinPublicGame,
     joinPrivateGame,

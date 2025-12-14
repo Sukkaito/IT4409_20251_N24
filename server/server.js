@@ -1,112 +1,25 @@
 const WebSocket = require('ws');
-const express = require('express');
-const http = require('http');
-const cors = require('cors');
 const { v4: uuidv4 } = require('uuid');
 const RoomManager = require('./RoomManager');
-const authRouter = require('./auth');
-const connectDB = require('./database');
 
-const PORT = process.env.PORT || 8080;
-
-// Connect to MongoDB
-connectDB();
-
-// Create Express app and HTTP server
-const app = express();
-const server = http.createServer(app);
-
-// Middleware
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
-
-// CORS for all routes
-const allowedOrigins = [
-  process.env.CLIENT_URL || 'http://localhost:5173',
-  'http://localhost:3000',
-  'http://localhost:5173'
-].filter(Boolean);
-
-app.use(cors({
-  origin: function (origin, callback) {
-    if (!origin) return callback(null, true);
-    if (allowedOrigins.indexOf(origin) !== -1) {
-      callback(null, true);
-    } else {
-      callback(null, true); // Allow all origins for development
-    }
-  },
-  credentials: true,
-  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-  allowedHeaders: ['Content-Type', 'Authorization']
-}));
-
-// Mount auth routes
-app.use('/api/auth', authRouter);
-
-// Health check endpoint
-app.get('/health', (req, res) => {
-  res.json({ status: 'ok', timestamp: new Date().toISOString() });
-});
-
-// Create WebSocket server
-const wss = new WebSocket.Server({ server, perMessageDeflate: false });
+const server = new WebSocket.Server({ port: 8080 });
 const roomManager = new RoomManager();
-
-// Get all active rooms (must be after roomManager initialization)
-app.get('/api/rooms', (req, res) => {
-  try {
-    console.log('GET /api/rooms - Request received');
-    const rooms = roomManager.getAllRooms();
-    console.log(`GET /api/rooms - Found ${rooms.length} active rooms`);
-    res.json({
-      success: true,
-      rooms: rooms
-    });
-  } catch (error) {
-    console.error('Error fetching rooms:', error);
-    res.status(500).json({ 
-      success: false,
-      error: 'Failed to fetch rooms',
-      message: error.message 
-    });
-  }
-});
 
 // Map to track which room each player is in
 const playerRoomMap = new Map(); // playerId -> roomId
 
-// Start HTTP server (which also handles WebSocket)
-server.listen(PORT, () => {
-  console.log(`Multiplayer Game Server running on port ${PORT}`);
-  console.log(`HTTP server: http://localhost:${PORT}`);
-  console.log(`WebSocket server: ws://localhost:${PORT}`);
-  
-  // Check OAuth configuration
-  const hasGoogle = !!(process.env.GOOGLE_CLIENT_ID && process.env.GOOGLE_CLIENT_SECRET);
-  
-  console.log('\nOAuth Providers Status:');
-  console.log(`  Google: ${hasGoogle ? '✓ Configured' : '✗ Not configured'}`);
-  
-  if (!hasGoogle) {
-    console.log('\n⚠️  No OAuth providers configured. Please set up environment variables.');
-    console.log('   See .env.example for required variables.');
-  }
-});
+console.log('Multiplayer Game Server running on port 8080');
 
-wss.on('connection', (ws) => {
+server.on('connection', (ws) => {
     const playerId = uuidv4();
     ws.playerId = playerId;
-    console.log(`New WebSocket connection: ${playerId}`);
 
     ws.on('message', (data) => {
         try {
-            console.log(`Raw message received from ${playerId}:`, data.toString());
             const message = JSON.parse(data);
-            console.log(`Parsed message from ${playerId}:`, message.type, message);
             handleClientMessage(playerId, ws, message);
         } catch (error) {
-            console.error(`Error parsing message from ${playerId}:`, error, 'Raw data:', data.toString());
+            console.error('Error parsing message:', error);
         }
     });
 
@@ -120,7 +33,6 @@ wss.on('connection', (ws) => {
 });
 
 function handleClientMessage(playerId, ws, message) {
-    console.log(`Received message from ${playerId}:`, message.type, message);
     switch (message.type) {
         case 'JOIN_PUBLIC':
             handleJoinPublic(playerId, ws, message);
@@ -130,9 +42,6 @@ function handleClientMessage(playerId, ws, message) {
             break;
         case 'CREATE_PRIVATE':
             handleCreatePrivate(playerId, ws, message);
-            break;
-        case 'CREATE_PUBLIC':
-            handleCreatePublic(playerId, ws, message);
             break;
         case 'LOBBY_SET_READY':
             handleSetReady(playerId, ws, message);
@@ -155,26 +64,11 @@ function handleClientMessage(playerId, ws, message) {
         case 'CHAT_MESSAGE':
             handleChatMessage(playerId, ws, message);
             break;
-        case 'RETURN_TO_LOBBY':
-            handleReturnToLobby(playerId, ws);
-            break;
     }
 }
 
 function handleJoinPublic(playerId, ws, message) {
-    console.log(`Quick join requested by player ${playerId} (${message.name})`);
-    const room = roomManager.findPublicRoom();
-    
-    if (!room) {
-        console.log(`No public room available for quick join`);
-        ws.send(JSON.stringify({
-            type: 'JOIN_ERROR',
-            error: 'NO_PUBLIC_ROOM_AVAILABLE'
-        }));
-        return;
-    }
-    
-    console.log(`Found public room ${room.id} with ${room.players.size}/${roomManager.MAX_PLAYERS} players`);
+    const room = roomManager.findOrCreatePublicRoom();
     const result = roomManager.addPlayerToRoom(room.id, playerId, ws, message.name, null);
     
     if (result.error) {
@@ -269,77 +163,6 @@ function handleCreatePrivate(playerId, ws, message) {
         playerId: playerId,
         lobbyState: roomState
     }));
-}
-
-function handleCreatePublic(playerId, ws, message) {
-    try {
-        console.log(`Creating public room for player ${playerId} (${message.name})`);
-        
-        if (!message.name || message.name.trim() === '') {
-            console.error('CREATE_PUBLIC: name is empty');
-            ws.send(JSON.stringify({
-                type: 'JOIN_ERROR',
-                error: 'INVALID_NAME'
-            }));
-            return;
-        }
-        
-        const room = roomManager.createRoom(false);
-        console.log(`Room created: ${room.id}`);
-        
-        const result = roomManager.addPlayerToRoom(room.id, playerId, ws, message.name, null);
-        
-        if (result.error) {
-            console.error(`Error creating public room: ${result.error}`);
-            ws.send(JSON.stringify({
-                type: 'JOIN_ERROR',
-                error: result.error
-            }));
-            return;
-        }
-
-        playerRoomMap.set(playerId, room.id);
-        const roomState = roomManager.getRoomLobbyState(room.id);
-        
-        console.log(`Public room created: ${room.id}, isPrivate: ${room.isPrivate}, roomCode: ${room.code}`);
-        console.log(`Sending LOBBY_JOINED to player ${playerId}`);
-        
-        const response = {
-            type: 'LOBBY_JOINED',
-            playerId: playerId,
-            lobbyState: roomState
-        };
-        console.log('LOBBY_JOINED response:', JSON.stringify(response, null, 2));
-        
-        if (ws.readyState === 1) { // WebSocket.OPEN
-            ws.send(JSON.stringify(response));
-            console.log('LOBBY_JOINED sent successfully');
-        } else {
-            console.error(`WebSocket not open, state: ${ws.readyState}`);
-        }
-
-        // Notify other players (if any)
-        roomManager.broadcastToRoom(room.id, {
-            type: 'LOBBY_PLAYER_JOINED',
-            player: {
-                id: playerId,
-                name: message.name,
-                element: null,
-                isReady: false,
-                isHost: result.player.isHost
-            }
-        }, playerId);
-
-        // Send updated lobby state to all
-        broadcastLobbyState(room.id);
-    } catch (error) {
-        console.error('Error in handleCreatePublic:', error);
-        ws.send(JSON.stringify({
-            type: 'JOIN_ERROR',
-            error: 'SERVER_ERROR',
-            message: error.message
-        }));
-    }
 }
 
 function handleSetReady(playerId, ws, message) {
@@ -498,9 +321,6 @@ function startGame(roomId) {
         }
     }
 
-    // Reset game engine completely before starting new game
-    room.gameEngine.resetGame();
-
     // Initialize all players in the game engine
     room.players.forEach((playerData, playerId) => {
         const player = room.gameEngine.addPlayer(playerId, playerData.ws, {
@@ -624,41 +444,6 @@ function handleDisconnect(playerId) {
         
         broadcastLobbyState(roomId);
     }
-}
-
-function handleReturnToLobby(playerId, ws) {
-    const roomId = playerRoomMap.get(playerId);
-    if (!roomId) {
-        ws.send(JSON.stringify({
-            type: 'RETURN_TO_LOBBY_ERROR',
-            error: 'ROOM_NOT_FOUND',
-            message: 'Room not found'
-        }));
-        return;
-    }
-
-    const room = roomManager.getRoom(roomId);
-    if (!room) {
-        ws.send(JSON.stringify({
-            type: 'RETURN_TO_LOBBY_ERROR',
-            error: 'ROOM_NOT_FOUND',
-            message: 'Room not found'
-        }));
-        return;
-    }
-
-    // Reset game state
-    room.gameStarted = false;
-    // Reset game engine completely - remove all players, clear cells, trails, etc.
-    room.gameEngine.resetGame();
-
-    // Set all players to not ready
-    room.players.forEach((playerData) => {
-        playerData.isReady = false;
-    });
-
-    // Broadcast lobby state to all players in the room
-    broadcastLobbyState(roomId);
 }
 
 function broadcastLobbyState(roomId) {
