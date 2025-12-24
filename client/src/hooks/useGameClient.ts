@@ -10,14 +10,15 @@ const PLAYER_SIZE = 48;
 export function useGameClient() {
   const [gameState, setGameState] = useState<GameState>({
     players: {},
-    cells: []
+    cells: [],
+    trails: {}
   });
   const [playerId, setPlayerId] = useState<string | null>(null);
   const [playerName, setPlayerName] = useState('');
   const [selectedElement, setSelectedElement] = useState<Element>('dog');
   const [isSpectator, setIsSpectator] = useState(false);
-  const [arena, setArena] = useState<Arena>({ width: 1600, height: 900 });
-  const [camera, setCamera] = useState<Camera>({ x: 0, y: 0, width: 1600, height: 900 });
+  const [arena, setArena] = useState<Arena>({ width: 1440, height: 810 });
+  const [camera, setCamera] = useState<Camera>({ x: 0, y: 0, width: 1440, height: 810 });
   const [elementAvailability, setElementAvailability] = useState<Record<string, boolean>>({});
   const [timerSync, setTimerSync] = useState<TimerSync | null>(null);
   const [currentDirection, setCurrentDirection] = useState<Direction>('NONE');
@@ -35,6 +36,7 @@ export function useGameClient() {
   const rendererRef = useRef<GameRenderer | null>(null);
   const lastFrameTimeRef = useRef<number>(0);
   const pendingInitPayloadRef = useRef<{ name: string; element?: Element; isSpectator?: boolean } | null>(null);
+  const pendingCreatePublicRoomRef = useRef<{ name: string } | null>(null);
   const gameStateRef = useRef<GameState>(gameState);
   const cameraRef = useRef<Camera>({ x: 0, y: 0, width: 1600, height: 900 });
   const arenaRef = useRef<Arena>(arena);
@@ -73,6 +75,10 @@ export function useGameClient() {
       }
 
       const canvas = canvasRef.current;
+      
+      canvas.width = 1440;
+      canvas.height = 810;
+      
       const ctx = canvas.getContext('2d');
       if (!ctx) {
         setTimeout(initCanvas, 100);
@@ -95,12 +101,12 @@ export function useGameClient() {
 
       const renderer = new GameRenderer(ctx, CELL_SIZE, PLAYER_SIZE, imageLoader);
       rendererRef.current = renderer;
-
+      
       const initialCamera = {
         x: 0,
         y: 0,
-        width: canvas.width,
-        height: canvas.height
+        width: 1440,
+        height: 810
       };
       setCamera(initialCamera);
       cameraRef.current = initialCamera;
@@ -112,10 +118,27 @@ export function useGameClient() {
   // WebSocket connection - only connect when needed
   const connectWebSocket = useCallback(() => {
     if (wsRef.current && wsRef.current.readyState === WebSocket.OPEN) {
+      // Already connected, check for pending requests
+      if (pendingCreatePublicRoomRef.current) {
+        const { name } = pendingCreatePublicRoomRef.current;
+        pendingCreatePublicRoomRef.current = null;
+        const message = {
+          type: 'CREATE_PUBLIC',
+          name: name
+        };
+        console.log('Sending CREATE_PUBLIC message (already connected):', message);
+        try {
+          wsRef.current.send(JSON.stringify(message));
+          console.log('CREATE_PUBLIC message sent successfully');
+        } catch (error) {
+          console.error('Error sending CREATE_PUBLIC message:', error);
+        }
+      }
       return; // Already connected
     }
 
     if (wsRef.current && wsRef.current.readyState === WebSocket.CONNECTING) {
+      // Already connecting, the onopen handler will check for pending requests
       return; // Already connecting
     }
 
@@ -127,7 +150,7 @@ export function useGameClient() {
       wsRef.current = ws;
 
       ws.onopen = () => {
-        console.log('Connected to game server');
+        console.log('Connected to game server, WebSocket state:', ws.readyState);
         setIsConnecting(false);
         setConnectionError('');
         // Send pending payload if exists
@@ -149,20 +172,46 @@ export function useGameClient() {
             }
           }
         }
+        // Trigger any pending createPublicRoom calls
+        if (pendingCreatePublicRoomRef.current) {
+          const { name } = pendingCreatePublicRoomRef.current;
+          pendingCreatePublicRoomRef.current = null; // Clear immediately to prevent duplicate
+          const message = {
+            type: 'CREATE_PUBLIC',
+            name: name
+          };
+          console.log('Sending pending CREATE_PUBLIC message:', message);
+          if (ws.readyState === WebSocket.OPEN) {
+            try {
+              ws.send(JSON.stringify(message));
+              console.log('CREATE_PUBLIC message sent successfully');
+            } catch (error) {
+              console.error('Error sending CREATE_PUBLIC message:', error);
+            }
+          } else {
+            console.error('WebSocket not open when trying to send CREATE_PUBLIC, state:', ws.readyState);
+          }
+        }
       };
 
       ws.onmessage = (event) => {
         try {
           const message: ServerMessage = JSON.parse(event.data);
+          console.log('Received message from server:', message.type, message);
           // Handle message inline to avoid dependency issues
           switch (message.type) {
             case 'LOBBY_JOINED':
+              console.log('LOBBY_JOINED received:', message);
               if (message.playerId) {
                 setPlayerId(message.playerId);
               }
               setLobbyState(message.lobbyState);
               setIsInLobby(true);
               setIsReady(false);
+              setConnectionError('');
+              setIsConnecting(false);
+              pendingCreatePublicRoomRef.current = null;
+              pendingInitPayloadRef.current = null;
               setChatMessages(prev => [...prev, {
                 type: 'system',
                 content: 'Joined lobby'
@@ -198,7 +247,8 @@ export function useGameClient() {
               break;
             case 'GAME_STARTED':
               setIsInLobby(false);
-              setChatMessages(prev => [...prev, {
+              // Clear lobby chat messages when game starts
+              setChatMessages([{
                 type: 'system',
                 content: 'Game starting!'
               }]);
@@ -213,15 +263,14 @@ export function useGameClient() {
             case 'INIT':
               setPlayerId(message.playerId);
               setArena(message.arena);
-              // Update canvas and camera size to match arena
               if (canvasRef.current) {
-                canvasRef.current.width = message.arena.width;
-                canvasRef.current.height = message.arena.height;
+                canvasRef.current.width = 1440;
+                canvasRef.current.height = 810;
                 const newCamera = {
                   x: 0,
                   y: 0,
-                  width: message.arena.width,
-                  height: message.arena.height
+                  width: 1440,
+                  height: 810
                 };
                 setCamera(newCamera);
                 cameraRef.current = newCamera;
@@ -233,6 +282,8 @@ export function useGameClient() {
               setPlayerName(message.player.name || playerName);
               setIsInLobby(false);
               pendingInitPayloadRef.current = null;
+              // Clear lobby chat messages when entering game
+              setChatMessages([]);
               break;
             case 'GAME_STATE_UPDATE':
               setGameState(message.gameState);
@@ -281,6 +332,25 @@ export function useGameClient() {
                   });
                 }
 
+                // Update trails overlay
+                if (delta.trails) {
+                  if (!newState.trails) {
+                    newState.trails = {};
+                  } else {
+                    newState.trails = { ...prev.trails };
+                  }
+                  
+                  for (const [key, trail] of Object.entries(delta.trails)) {
+                    if (trail === null) {
+                      // Trail was removed
+                      delete newState.trails[key];
+                    } else {
+                      // Trail was added or updated
+                      newState.trails[key] = trail as any;
+                    }
+                  }
+                }
+
                 // Update game time and timer
                 // if (delta.gameTime !== undefined) {
                 //   newState.gameTime = delta.gameTime;
@@ -309,38 +379,76 @@ export function useGameClient() {
               });
               break;
             case 'PLAYER_JOINED':
-              setChatMessages(prev => [...prev, {
-                type: 'system',
-                content: `${message.player.name || message.player.id?.substring(0, 8) || 'Player'} joined`
-              }]);
+              setChatMessages(prev => {
+                const messageContent = `${message.player.name || message.player.id?.substring(0, 8) || 'Player'} joined`;
+                // Check if message already exists to prevent duplicates
+                const exists = prev.some(msg => 
+                  msg.type === 'system' && 
+                  msg.content === messageContent
+                );
+                if (exists) {
+                  return prev;
+                }
+                return [...prev, {
+                  type: 'system',
+                  content: messageContent
+                }];
+              });
               setGameState(prev => ({
                 ...prev,
                 players: { ...prev.players, [message.player.id]: message.player }
               }));
               break;
             case 'PLAYER_LEFT':
-              setGameState(prev => {
-                const departingPlayer = prev.players[message.playerId];
-                const departingName = departingPlayer
-                  ? (departingPlayer.name || departingPlayer.id?.substring(0, 8) || 'Player')
-                  : message.playerId?.substring(0, 8) || 'Player';
-                setChatMessages(chatMsg => [...chatMsg, {
+              // Get player name before updating state
+              gameStateRef.current = gameState;
+              const departingPlayer = gameStateRef.current.players[message.playerId];
+              const departingName = departingPlayer
+                ? (departingPlayer.name || departingPlayer.id?.substring(0, 8) || 'Player')
+                : message.playerId?.substring(0, 8) || 'Player';
+              // Add chat message with duplicate check
+              setChatMessages(chatMsg => {
+                const messageContent = `${departingName} left`;
+                const exists = chatMsg.some(msg => 
+                  msg.type === 'system' && 
+                  msg.content === messageContent
+                );
+                if (exists) {
+                  return chatMsg;
+                }
+                return [...chatMsg, {
                   type: 'system',
-                  content: `${departingName} left`
-                }]);
+                  content: messageContent
+                }];
+              });
+              // Update game state
+              setGameState(prev => {
                 const newPlayers = { ...prev.players };
                 delete newPlayers[message.playerId];
                 return { ...prev, players: newPlayers };
               });
               break;
             case 'CHAT_MESSAGE':
+              // Get player name from current game state and add chat message separately
               setGameState(prev => {
                 const player = prev.players[message.playerId];
                 const playerName = player ? (player.name || player.id?.substring(0, 8) || 'Unknown') : 'Unknown';
-                setChatMessages(chatMsg => [...chatMsg, {
-                  type: 'player',
-                  content: `${playerName}: ${message.message}`
-                }]);
+                // Use functional update to get latest state and prevent duplicates
+                setChatMessages(chatMsg => {
+                  // Check if this exact message already exists (prevent duplicates)
+                  const messageContent = `${playerName}: ${message.message}`;
+                  const exists = chatMsg.some(msg => 
+                    msg.type === 'player' && 
+                    msg.content === messageContent
+                  );
+                  if (exists) {
+                    return chatMsg;
+                  }
+                  return [...chatMsg, {
+                    type: 'player',
+                    content: messageContent
+                  }];
+                });
                 return prev;
               });
               break;
@@ -349,16 +457,21 @@ export function useGameClient() {
               pendingInitPayloadRef.current = null;
               break;
             case 'JOIN_ERROR':
+              console.error('JOIN_ERROR received:', message.error);
+              setIsConnecting(false);
               if (message.error === 'ROOM_NOT_FOUND') {
                 setConnectionError('Room not found. Please check the room code.');
               } else if (message.error === 'GAME_STARTED') {
                 setConnectionError('Cannot join room. The game has already started.');
               } else if (message.error === 'ROOM_FULL') {
                 setConnectionError('Room is full. Please try another room.');
+              } else if (message.error === 'NO_PUBLIC_ROOM_AVAILABLE') {
+                setConnectionError('No public room available. Please create a room or wait for one to become available.');
               } else {
                 setConnectionError('Failed to join room.');
               }
               pendingInitPayloadRef.current = null;
+              pendingCreatePublicRoomRef.current = null;
               break;
           }
         } catch (error) {
@@ -378,6 +491,7 @@ export function useGameClient() {
           setLobbyState(null);
           setConnectionError('You have been kicked from the room by the host.');
           pendingInitPayloadRef.current = null;
+          pendingCreatePublicRoomRef.current = null;
           return; // Don't reconnect if kicked
         }
         
@@ -390,6 +504,7 @@ export function useGameClient() {
             }
           }, 3000);
         } else {
+          // Don't clear pendingCreatePublicRoomRef - it should be retried on reconnect
           pendingInitPayloadRef.current = null;
         }
       };
@@ -443,6 +558,8 @@ export function useGameClient() {
         }));
         setPlayerName(message.player.name || playerName);
         pendingInitPayloadRef.current = null;
+        // Clear chat messages when entering game
+        setChatMessages([]);
         break;
 
 
@@ -518,15 +635,14 @@ export function useGameClient() {
         }]);
         setPlayerId(message.playerId);
         setArena(message.arena);
-        // Update canvas and camera size to match arena
         if (canvasRef.current) {
-          canvasRef.current.width = message.arena.width;
-          canvasRef.current.height = message.arena.height;
+          canvasRef.current.width = 1440;
+          canvasRef.current.height = 810;
           const newCamera = {
             x: 0,
             y: 0,
-            width: message.arena.width,
-            height: message.arena.height
+            width: 1440,
+            height: 810
           };
           setCamera(newCamera);
           cameraRef.current = newCamera;
@@ -841,27 +957,82 @@ export function useGameClient() {
   }, [connectWebSocket]);
 
   const createPrivateRoom = useCallback((name: string) => {
+    console.log('createPrivateRoom called with name:', name);
+    
+    if (!name || name.trim() === '') {
+      console.error('createPrivateRoom: name is empty');
+      setConnectionError('Name cannot be empty');
+      return;
+    }
+    
     const sendCreate = () => {
       if (wsRef.current && wsRef.current.readyState === WebSocket.OPEN) {
-        wsRef.current.send(JSON.stringify({
+        const message = {
           type: 'CREATE_PRIVATE',
           name: name
-        }));
+        };
+        console.log('Sending CREATE_PRIVATE message:', message);
+        wsRef.current.send(JSON.stringify(message));
         return true;
       }
+      console.log('WebSocket not ready, state:', wsRef.current?.readyState);
       return false;
     };
 
     if (!sendCreate()) {
+      console.log('WebSocket not connected, connecting...');
       connectWebSocket();
       // Wait for connection
       const checkConnection = setInterval(() => {
         if (sendCreate()) {
+          console.log('CREATE_PRIVATE sent successfully');
           clearInterval(checkConnection);
         }
       }, 100);
-      setTimeout(() => clearInterval(checkConnection), 5000);
+      setTimeout(() => {
+        clearInterval(checkConnection);
+        if (wsRef.current?.readyState !== WebSocket.OPEN) {
+          console.error('Failed to send CREATE_PRIVATE after 5 seconds');
+          setConnectionError('Failed to create room. Please try again.');
+        }
+      }, 5000);
     }
+  }, [connectWebSocket]);
+
+  const createPublicRoom = useCallback((name: string) => {
+    console.log('createPublicRoom called with name:', name);
+    
+    if (!name || name.trim() === '') {
+      console.error('createPublicRoom: name is empty');
+      setConnectionError('Name cannot be empty');
+      return;
+    }
+    
+    // If WebSocket is already connected, send immediately
+    if (wsRef.current && wsRef.current.readyState === WebSocket.OPEN) {
+      const message = {
+        type: 'CREATE_PUBLIC',
+        name: name
+      };
+      console.log('Sending CREATE_PUBLIC message (already connected):', message);
+      try {
+        wsRef.current.send(JSON.stringify(message));
+        console.log('CREATE_PUBLIC message sent successfully');
+      } catch (error) {
+        console.error('Error sending CREATE_PUBLIC message:', error);
+      }
+      return;
+    }
+    
+    // WebSocket not ready, store in pending
+    console.log('WebSocket not connected, storing request and connecting...');
+    pendingCreatePublicRoomRef.current = { name };
+    
+    // Connect WebSocket - the onopen handler will send the pending request
+    if (!wsRef.current || wsRef.current.readyState === WebSocket.CLOSED) {
+      connectWebSocket();
+    }
+    // If already connecting, onopen handler will send it when ready
   }, [connectWebSocket]);
 
   const setLobbyReady = useCallback((isReady: boolean) => {
@@ -956,6 +1127,29 @@ export function useGameClient() {
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, [currentDirection, setDirection]);
 
+  const leaveRoom = useCallback(() => {
+    // Close WebSocket connection
+    if (wsRef.current) {
+      wsRef.current.close(1000, 'User left room');
+      wsRef.current = null;
+    }
+    
+    // Reset all states
+    // setPlayerId(null);
+    // setPlayerName('');
+    setSelectedElement('dog');
+    setIsSpectator(false);
+    setLobbyState(null);
+    setIsInLobby(false);
+    setIsReady(false);
+    setGameState({ players: {}, cells: [] });
+    setChatMessages([]);
+    setConnectionError('');
+    setIsConnecting(false);
+    setIsKicked(false);
+    pendingInitPayloadRef.current = null;
+  }, []);
+
   return {
     canvasRef,
     gameState,
@@ -978,6 +1172,7 @@ export function useGameClient() {
     joinPublicGame,
     joinPrivateGame,
     createPrivateRoom,
+    createPublicRoom,
     spectate,
     sendChatMessage,
     setDirection,
@@ -989,7 +1184,8 @@ export function useGameClient() {
     setLobbyElement,
     sendLobbyChat,
     kickPlayer,
-    startGame
+    startGame,
+    leaveRoom
   };
 }
 

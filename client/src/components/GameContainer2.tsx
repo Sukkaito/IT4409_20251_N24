@@ -10,7 +10,6 @@ interface GameContainer2Props {
   chatMessages: Array<{ type: 'player' | 'system'; content: string }>;
   onSendChatMessage: (message: string) => void;
   onLeaveGame?: () => void;
-  countdown: number | null;
 }
 
 export function GameContainer2({
@@ -21,8 +20,7 @@ export function GameContainer2({
   timerSync,
   chatMessages,
   onSendChatMessage,
-  onLeaveGame,
-  countdown
+  onLeaveGame
 }: GameContainer2Props) {
   const DESIGN_WIDTH = 960;
   const DESIGN_HEIGHT = 540;
@@ -33,8 +31,6 @@ export function GameContainer2({
   const [chatInputValue, setChatInputValue] = useState('');
   const chatInputRef = useRef<HTMLInputElement>(null);
   const messagesEndRef = useRef<HTMLDivElement>(null);
-  const [hasNewMessage, setHasNewMessage] = useState(false);
-  const previousMessageCountRef = useRef(0);
 
   useEffect(() => {
     const updateCanvasSize = () => {
@@ -125,25 +121,9 @@ export function GameContainer2({
     }
   };
 
-  // Initialize message count on mount
-  useEffect(() => {
-    previousMessageCountRef.current = chatMessages.length;
-  }, []);
-
   useEffect(() => {
     if (showChatBox && messagesEndRef.current) {
       messagesEndRef.current.scrollIntoView({ behavior: 'smooth' });
-      // Reset new message indicator when chat box is opened
-      setHasNewMessage(false);
-      previousMessageCountRef.current = chatMessages.length;
-    }
-  }, [chatMessages, showChatBox]);
-
-  // Detect new messages when chat box is closed
-  useEffect(() => {
-    if (!showChatBox && chatMessages.length > previousMessageCountRef.current) {
-      setHasNewMessage(true);
-      previousMessageCountRef.current = chatMessages.length;
     }
   }, [chatMessages, showChatBox]);
 
@@ -172,9 +152,6 @@ export function GameContainer2({
   };
 
   const getTimeRemaining = (): number => {
-    // Don't show timer during countdown
-    if (countdown !== null) return 0;
-    
     if (!gameState) return 10 * 1000;
     
     const defaultTime = 10 * 1000;
@@ -182,8 +159,7 @@ export function GameContainer2({
       ? gameState.timeRemaining
       : defaultTime;
 
-    // Only use timerSync if countdown is finished
-    if (countdown === null && timerSync && typeof timerSync.remainingMs === 'number') {
+    if (timerSync && typeof timerSync.remainingMs === 'number') {
       const elapsed = performance.now() - timerSync.syncedAt;
       timeRemaining = Math.max(0, timerSync.remainingMs - elapsed);
     }
@@ -301,54 +277,51 @@ export function GameContainer2({
           }}
         />
 
-        {/* Timer - chỉ hiển thị khi không đang countdown */}
-        {countdown === null && (
+        <div style={{
+          position: 'absolute',
+          top: '10px',
+          left: '50%',
+          transform: 'translateX(-50%) scale(0.5)',
+          transformOrigin: 'top center',
+          zIndex: 1000,
+          pointerEvents: 'none',
+          opacity: 0.9
+        }}>
+          <img
+            src="/elements/IngameUI/Timer.png"
+            alt="Timer"
+            style={{
+              width: 'auto',
+              height: 'auto',
+              display: 'block',
+              imageRendering: 'auto'
+            }}
+          />
           <div style={{
             position: 'absolute',
-            top: '10px',
+            top: '50%',
             left: '50%',
-            transform: 'translateX(-50%) scale(0.5)',
-            transformOrigin: 'top center',
-            zIndex: 1000,
-            pointerEvents: 'none',
-            opacity: 0.9
+            transform: 'translate(-50%, -50%)',
+            textAlign: 'center',
+            pointerEvents: 'none'
           }}>
-            <img
-              src="/elements/IngameUI/Timer.png"
-              alt="Timer"
-              style={{
-                width: 'auto',
-                height: 'auto',
-                display: 'block',
-                imageRendering: 'auto'
-              }}
-            />
             <div style={{
-              position: 'absolute',
-              top: '50%',
-              left: '50%',
-              transform: 'translate(-50%, -50%)',
-              textAlign: 'center',
-              pointerEvents: 'none'
-            }}>
+              fontSize: '24px',
+              color: '#000000',
+              fontWeight: 'bold'
+            }}>{formatTime(timeRemaining)}</div>
+            {isGameOver && (
               <div style={{
-                fontSize: '24px',
+                fontSize: '12px',
+                marginTop: '3px',
                 color: '#000000',
                 fontWeight: 'bold'
-              }}>{formatTime(timeRemaining)}</div>
-              {isGameOver && (
-                <div style={{
-                  fontSize: '12px',
-                  marginTop: '3px',
-                  color: '#000000',
-                  fontWeight: 'bold'
-                }}>
-                  {winnerName ? `${winnerName} wins!` : 'Match ended'}
-                </div>
-              )}
-            </div>
+              }}>
+                {winnerName ? `${winnerName} wins!` : 'Match ended'}
+              </div>
+            )}
           </div>
-        )}
+        </div>
 
       </div>
       
@@ -399,30 +372,17 @@ export function GameContainer2({
                   transform: 'translate(-50%, -50%)',
                   textAlign: 'center',
                   pointerEvents: 'none',
-                  color: '#FFFFFF',
+                  color: '#000000',
                   fontWeight: 'bold',
-                  fontFamily: "'Bricolage Grotesque', sans-serif",
                   display: 'flex',
                   flexDirection: 'column',
                   alignItems: 'center',
                   gap: '10px'
                 }}>
-                  <div style={{ 
-                    fontSize: '50px', 
-                    lineHeight: '1.2',
-                    fontFamily: "'Bricolage Grotesque', sans-serif",
-                    fontWeight: 'bold',
-                    color: '#FFFFFF'
-                  }}>
+                  <div style={{ fontSize: '40px', lineHeight: '1.2' }}>
                     {player.name || player.id?.substring(0, 8) || 'Player'}
                   </div>
-                  <div style={{ 
-                    fontSize: '45px', 
-                    lineHeight: '1.2',
-                    fontFamily: "'Bricolage Grotesque', sans-serif",
-                    fontWeight: 'bold',
-                    color: '#FFFFFF'
-                  }}>
+                  <div style={{ fontSize: '36px', lineHeight: '1.2' }}>
                     {player.area || 0}
                   </div>
                 </div>
@@ -458,32 +418,14 @@ export function GameContainer2({
           e.currentTarget.style.transform = `scale(${scale * 0.25 * 0.8})`;
         }}
       >
-        <div style={{ position: 'relative', display: 'inline-block' }}>
-          <img
-            src="/elements/IngameUI/EnterChat@4x.png"
-            alt="Enter Chat"
-            style={{
-              display: 'block',
-              transition: 'transform 0.3s ease'
-            }}
-          />
-          {hasNewMessage && !showChatBox && (
-            <img
-              src="/elements/IngameUI/Notify@4x.png"
-              alt="New Message"
-              style={{
-                position: 'absolute',
-                top: '0',
-                right: '0',
-                width: 'auto',
-                height: 'auto',
-                transform: 'translate(25%, -25%)',
-                pointerEvents: 'none',
-                zIndex: 1001
-              }}
-            />
-          )}
-        </div>
+        <img
+          src="/elements/IngameUI/EnterChat@4x.png"
+          alt="Enter Chat"
+          style={{
+            display: 'block',
+            transition: 'transform 0.3s ease'
+          }}
+        />
       </div>
 
       <div
@@ -554,7 +496,7 @@ export function GameContainer2({
             <div style={{
               flex: 1,
               minHeight: 0,
-              maxHeight: '250px',
+              maxHeight: '300px',
               overflowY: 'auto',
               overflowX: 'hidden',
               display: 'flex',
@@ -590,9 +532,7 @@ export function GameContainer2({
             <div style={{
               display: 'flex',
               gap: '10px',
-              alignItems: 'center',
-              marginTop: 'auto',
-              paddingTop: '10px'
+              alignItems: 'center'
             }}>
               <input
                 ref={chatInputRef}
@@ -604,172 +544,113 @@ export function GameContainer2({
                 style={{
                   flex: 1,
                   padding: '12px 15px',
-                  backgroundImage: 'url(/elements/IngameUI/input@2x.png)',
-                  backgroundSize: '100% 100%',
-                  backgroundRepeat: 'no-repeat',
-                  backgroundPosition: 'center',
-                  border: 'none',
-                  borderRadius: '0',
-                  color: '#000000',
+                  background: 'rgba(255, 255, 255, 0.1)',
+                  border: '1px solid rgba(255, 255, 255, 0.2)',
+                  borderRadius: '8px',
+                  color: 'white',
                   fontSize: '14px',
                   outline: 'none',
-                  minHeight: '45px',
-                  boxSizing: 'border-box'
+                  transition: 'all 0.3s ease'
+                }}
+                onFocus={(e) => {
+                  e.target.style.background = 'rgba(255, 255, 255, 0.15)';
+                  e.target.style.borderColor = 'rgba(255, 255, 255, 0.4)';
+                }}
+                onBlur={(e) => {
+                  e.target.style.background = 'rgba(255, 255, 255, 0.1)';
+                  e.target.style.borderColor = 'rgba(255, 255, 255, 0.2)';
                 }}
               />
               <button
                 onClick={handleSendChat}
                 style={{
-                  width: 'auto',
-                  height: 'auto',
-                  background: 'transparent',
+                  width: '45px',
+                  height: '45px',
+                  background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
                   border: 'none',
+                  borderRadius: '8px',
                   cursor: 'pointer',
-                  padding: 0,
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
-                  transition: 'transform 0.2s ease',
-                  transform: 'scale(0.5)',
-                  transformOrigin: 'center'
+                  transition: 'all 0.3s ease',
+                  boxShadow: '0 4px 15px rgba(102, 126, 234, 0.4)'
                 }}
                 onMouseEnter={(e) => {
-                  e.currentTarget.style.transform = 'scale(0.525)'; // 0.5 * 1.05
+                  e.currentTarget.style.transform = 'scale(1.1)';
+                  e.currentTarget.style.boxShadow = '0 6px 20px rgba(102, 126, 234, 0.6)';
                 }}
                 onMouseLeave={(e) => {
-                  e.currentTarget.style.transform = 'scale(0.5)';
+                  e.currentTarget.style.transform = 'scale(1)';
+                  e.currentTarget.style.boxShadow = '0 4px 15px rgba(102, 126, 234, 0.4)';
                 }}
               >
-                <img
-                  src="/elements/IngameUI/sent@2x.png"
-                  alt="Send"
-                  style={{
-                    width: 'auto',
-                    height: 'auto',
-                    display: 'block'
-                  }}
-                />
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="white"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <line x1="22" y1="2" x2="11" y2="13"></line>
+                  <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                </svg>
               </button>
             </div>
           </div>
         </div>
       )}
 
-      {/* Countdown overlay - hiển thị ở giữa màn hình */}
-      {countdown !== null && (
-        <div
-          style={{
-            position: 'fixed',
-            top: '50%',
-            left: '50%',
-            transform: 'translate(-50%, -50%)',
-            zIndex: 5000,
-            pointerEvents: 'none',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center'
-          }}
-        >
-          <div
-            style={{
-              fontSize: '120px',
-              fontFamily: "'Bricolage Grotesque', sans-serif",
-              fontWeight: 700,
-              color: '#FFFFFF',
-              textShadow: '0 0 20px rgba(78, 205, 196, 0.8), 0 0 40px rgba(78, 205, 196, 0.6), 0 4px 8px rgba(0, 0, 0, 0.5)',
-              animation: 'countdownPulse 0.5s ease-in-out',
-              lineHeight: 1
-            }}
-          >
-            {countdown}
-          </div>
-        </div>
-      )}
-
-      {/* Winner Popup */}
       {isGameOver && (
         <div
           style={{
             position: 'fixed',
-            top: 0,
-            left: 0,
-            right: 0,
-            bottom: 0,
-            backgroundColor: 'rgba(0, 0, 0, 0.7)',
+            bottom: '40px',
+            left: '50%',
+            transform: 'translateX(-50%)',
             display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            zIndex: 5000,
-            pointerEvents: 'auto'
+            gap: '16px',
+            zIndex: 2000
           }}
-          onClick={(e) => e.stopPropagation()}
         >
-          <div
-            style={{
-              backgroundColor: '#292c31',
-              padding: '40px 60px',
-              borderRadius: '16px',
-              border: '2px solid #16213e',
-              boxShadow: '0 8px 32px rgba(0, 0, 0, 0.5)',
-              minWidth: '400px',
-              textAlign: 'center',
-              pointerEvents: 'auto',
-              fontFamily: "'Bricolage Grotesque', sans-serif",
-              display: 'flex',
-              flexDirection: 'column',
-              justifyContent: 'center',
-              alignItems: 'center'
+          <button
+            onClick={() => {
+              // Quick reset: reload page and reconnect
+              window.location.reload();
             }}
-            onClick={(e) => e.stopPropagation()}
+            style={{
+              padding: '10px 18px',
+              borderRadius: '12px',
+              border: '2px solid #000',
+              background: '#4ECDC4',
+              fontWeight: 'bold',
+              cursor: 'pointer'
+            }}
           >
-            <h2
-              style={{
-                color: '#fff',
-                fontSize: '36px',
-                marginBottom: 0,
-                marginTop: 0,
-                fontWeight: 'bold',
-                fontFamily: "'Bricolage Grotesque', sans-serif",
-                flex: 1,
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center'
-              }}
-            >
-              {winnerName ? `${winnerName} Wins!` : 'Match Ended'}
-            </h2>
-            <div
-              onClick={() => {
-                if (onLeaveGame) {
-                  onLeaveGame();
-                }
-              }}
-              style={{
-                cursor: 'pointer',
-                marginTop: '60px',
-                display: 'inline-block',
-                transition: 'transform 0.2s ease',
-                transform: 'scale(0.25)',
-                transformOrigin: 'center'
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.transform = 'scale(0.2625)'; // 0.25 * 1.05
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.transform = 'scale(0.25)';
-              }}
-            >
-              <img
-                src="/elements/IngameUI/returntolobbyButton@2x.png"
-                alt="Return to Lobby"
-                style={{
-                  width: 'auto',
-                  height: 'auto',
-                  display: 'block'
-                }}
-              />
-            </div>
-          </div>
+            Reset Game
+          </button>
+          <button
+            onClick={() => {
+              if (onLeaveGame) {
+                onLeaveGame();
+              } else {
+                window.location.reload();
+              }
+            }}
+            style={{
+              padding: '10px 18px',
+              borderRadius: '12px',
+              border: '2px solid #000',
+              background: '#FF6B6B',
+              fontWeight: 'bold',
+              cursor: 'pointer'
+            }}
+          >
+            Leave Lobby
+          </button>
         </div>
       )}
 

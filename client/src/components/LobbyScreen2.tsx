@@ -47,7 +47,7 @@ export function LobbyScreen2({
   onLeaveRoom,
   isReady
 }: LobbyScreen2Props) {
-  // Original design size @4x: 1920px x 1080px
+  // Kích thước thiết kế gốc @4x: 1920px x 1080px
   const DESIGN_WIDTH = 480;
   const DESIGN_HEIGHT = 270;
   
@@ -59,7 +59,7 @@ export function LobbyScreen2({
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
   // Automatically select a random character when joining lobby and no character is selected
-  // Logic from old LobbyScreen
+  // Logic từ LobbyScreen cũ
   useEffect(() => {
     if (!lobbyState || !currentPlayerId) return;
     
@@ -179,7 +179,7 @@ export function LobbyScreen2({
           height: `${DESIGN_HEIGHT}px`,
           transform: `scale(${scale})`,
           transformOrigin: 'center center',
-          // Keep actual size to avoid affecting layout
+          // Giữ nguyên kích thước thực tế để không ảnh hưởng layout
           flexShrink: 0
         }}
       >
@@ -305,7 +305,7 @@ export function LobbyScreen2({
             color: '#000',
             fontSize: '12px', // 48 / 4
             fontWeight: 'bold',
-            fontFamily: "'Bricolage Grotesque', 'Inter', sans-serif",
+            fontFamily: "'Annie Use Your Telescope', cursive",
             pointerEvents: 'none',
             zIndex: 100,
             display: 'flex',
@@ -377,8 +377,8 @@ export function LobbyScreen2({
           onClick={() => onSetReady(!isReady)}
           style={{
             position: 'absolute',
-            left: '350px',    // Adjusted, between 342.5px and 360px
-            top: '200px',     // Pushed down from 169.5px
+            left: '350px',    // Điều chỉnh lại, giữa 342.5px và 360px
+            top: '200px',     // Đẩy xuống từ 169.5px
             width: '75px',   // 300 / 4
             height: '50px',  // 200 / 4
             cursor: 'pointer',
@@ -409,8 +409,8 @@ export function LobbyScreen2({
           }}
           style={{
             position: 'absolute',
-            left: '433.75px', // Adjusted, between 426.25px and 443.75px
-            top: '200px',     // Pushed down from 169.5px
+            left: '433.75px', // Điều chỉnh lại, giữa 426.25px và 443.75px
+            top: '200px',     // Đẩy xuống từ 169.5px
             width: '43.5px',  // 174 / 4
             height: '49.5px', // 198 / 4
             cursor: 'pointer',
@@ -571,19 +571,18 @@ export function LobbyScreen2({
           </>
         )}
 
-        {/* Chatbox lobby */}
         <div style={{
           position: 'absolute',
-          left: '34.75px',  // gần mép trái holder
-          top: '190px',
-          width: '292px',
-          height: '63.5px',
+          left: '34.75px',  // 139 / 4
+          top: '190px',     // 760 / 4
+          width: '292px',   // 1168 / 4
+          height: '63.5px', // 254 / 4
           zIndex: 1000,
           pointerEvents: 'none'
         }}>
           <img
-            src="/elements/LobbyUI/Asset 250@2x.png"
-            alt="Chat Background"
+            src="/elements/LobbyUI/chatbox@4x.png"
+            alt="Chatbox"
             style={{
               width: '100%',
               height: '100%',
@@ -593,53 +592,32 @@ export function LobbyScreen2({
           />
         </div>
 
-        {/* Vùng hiển thị tin nhắn (Asset 248@2x) - kích thước gốc: 1073.987px x 141.8339px @2x */}
         <div style={{
           position: 'absolute',
-          left: '40px',
-          top: '199px',
-          width: '268.5px',  // 1073.987 / 4 (from @2x to 1x in 480x270 layout)
-          height: '35.46px', // 141.8339 / 4
+          left: '34.75px',  // 139 / 4
+          top: '190px',     // 760 / 4
+          width: '292px',   // 1168 / 4
+          height: '63.5px', // 254 / 4
           zIndex: 1001,
           pointerEvents: 'none',
-          overflow: 'hidden',
-          background: 'transparent'
+          background: 'transparent',
+          overflow: 'hidden'
         }}>
-          <img
-            src="/elements/LobbyUI/Asset 248@2x.png"
-            alt="Messages Area"
-            style={{
-              position: 'absolute',
-              top: 0,
-              left: 0,
-              width: '100%',
-              height: '100%',
-              objectFit: 'contain',
-              display: 'block',
-              pointerEvents: 'none'
-            }}
-          />
-          <div
-            style={{
-              position: 'relative',
-              height: '100%',
-              overflow: 'hidden',
-              padding: '2px 8px',
-              pointerEvents: 'auto',
-              background: 'transparent'
-            }}
-          >
+          <div style={{
+            height: '100%',
+            overflowY: 'auto',
+            padding: '5px', // 20 / 4
+            pointerEvents: 'auto',
+            background: 'transparent'
+          }}>
             {chatMessages.map((msg, index) => (
               <div
                 key={index}
                 style={{
-                  margin: '1.25px 4px',
-                  fontSize: '7px',
-                  color: '#000000',
-                  fontStyle: 'normal',
-                  textAlign: 'left',
-                  fontFamily: "'Bricolage Grotesque', sans-serif",
-                  fontWeight: 400
+                  margin: '1.25px 0', // 5 / 4
+                  fontSize: '3.5px',  // 14 / 4
+                  color: msg.type === 'system' ? '#4ECDC4' : '#FFEAA7',
+                  fontStyle: msg.type === 'system' ? 'italic' : 'normal'
                 }}
               >
                 {msg.content}
@@ -649,13 +627,12 @@ export function LobbyScreen2({
           </div>
         </div>
 
-        {/* Input field background */}
         <div style={{
           position: 'absolute',
-          left: '44px',
-          top: '235px',
-          width: '241.5px',
-          height: '16.25px',
+          left: '44px',     // 176 / 4
+          top: '230.5px',   // 922 / 4
+          width: '241.5px', // 966 / 4
+          height: '16.25px', // 65 / 4
           zIndex: 1000,
           pointerEvents: 'none'
         }}>
@@ -671,44 +648,40 @@ export function LobbyScreen2({
           />
         </div>
 
-        {/* Input thực tế */}
         <input
           ref={chatInputRef}
           type="text"
-          placeholder="Type a message..."
+          placeholder="Type a message... (Press Enter)"
           value={chatInputValue}
           onChange={(e) => setChatInputValue(e.target.value)}
           onKeyPress={handleChatKeyPress}
           style={{
             position: 'absolute',
-            left: '44px',
-            top: '235px',
-            width: '241.5px',
-            height: '16.25px',
-            padding: '0 5px',
+            left: '44px',     // 176 / 4
+            top: '230.5px',   // 922 / 4
+            width: '241.5px', // 966 / 4
+            height: '16.25px', // 65 / 4
+            padding: '0 5px', // 20 / 4
             background: 'transparent',
             border: 'none',
-            color: '#000000',
-            fontSize: '8px',
-            fontFamily: "'Bricolage Grotesque', sans-serif",
-            fontWeight: 400,
-            zIndex: 1002,
+            color: 'white',
+            fontSize: '4px', // 16 / 4
+            zIndex: 1001,
             outline: 'none'
           }}
         />
 
-        {/* Nút gửi (sentButton@4x) */}
         <div
           onClick={handleChatSend}
           style={{
             position: 'absolute',
-            left: '299.25px',
-            top: '235px',
-            width: '15.75px',
-            height: '15.75px',
+            left: '299.25px', // 1197 / 4
+            top: '230.5px',   // 922 / 4
+            width: '15.75px', // 63 / 4
+            height: '15.75px', // 63 / 4
             cursor: 'pointer',
             pointerEvents: 'auto',
-            zIndex: 1003
+            zIndex: 1001
           }}
         >
           <img
@@ -812,8 +785,8 @@ export function LobbyScreen2({
                   transform: 'translate(-50%, -50%)',
                   color: '#000',
                   fontSize: '10px', // 40 / 4
-                  fontWeight: '700',
-                  fontFamily: "'Bricolage Grotesque', 'Inter', sans-serif",
+                  fontWeight: 'bold',
+                  fontFamily: "'Annie Use Your Telescope', cursive",
                   textAlign: 'center',
                   pointerEvents: 'none',
                   zIndex: 10,
@@ -931,25 +904,32 @@ export function LobbyScreen2({
           const isSelected = selectedElement === element;
           const isAvailable = elementAvailability[element] !== false;
           
-    // Synchronize character selection box size (square)
-    let left = '0px';
-    let bottom = '0px';
-    const width = '58px';
-    const height = '58px';
-    
-    if (element === 'penguin') {
-      left = '349.25px';
-      bottom = '178.5px';
-    } else if (element === 'whale') {
-      left = '427.25px';
-      bottom = '178.5px';
-    } else if (element === 'dog') {
-      left = '427.25px';
-      bottom = '98.75px';
-    } else if (element === 'duck') {
-      left = '349.25px';
-      bottom = '98.75px';
-    }
+          let left = '0px';
+          let bottom = '0px';
+          let width = '0px';
+          let height = '0px';
+          
+          if (element === 'penguin') {
+            left = '349.25px';
+            bottom = '178.5px';
+            width = '55.5px';
+            height = '52.75px';
+          } else if (element === 'whale') {
+            left = '427.25px';
+            bottom = '178.5px';
+            width = '60.5px';
+            height = '55.5px';
+          } else if (element === 'dog') {
+            left = '427.25px';
+            bottom = '98.75px';
+            width = '55.25px';
+            height = '57.25px';
+          } else if (element === 'duck') {
+            left = '349.25px';
+            bottom = '98.75px';
+            width = '55.25px';
+            height = '55.25px';
+          }
           
           return (
             <div
@@ -959,34 +939,28 @@ export function LobbyScreen2({
                   onSelectElement(element);
                 }
               }}
-      style={{
-        position: 'absolute',
-        left,
-        bottom,
-        width,
-        height,
-        cursor: isAvailable ? 'pointer' : 'not-allowed',
-        pointerEvents: 'auto',
-        opacity: isAvailable ? (isSelected ? 1 : 0.7) : 0.3,
-        transition: 'opacity 0.2s, transform 0.2s',
-        transform: isSelected ? 'scale(1.04)' : 'scale(1)',
-        border: isSelected ? '2px solid #4ECDC4' : '2px solid transparent',
-        borderRadius: '4px',
-        boxShadow: isSelected ? '0 0 8px rgba(78, 205, 196, 0.5)' : 'none',
-        boxSizing: 'border-box',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center'
-      }}
+              style={{
+                position: 'absolute',
+                left,
+                bottom,
+                width,
+                height,
+                cursor: isAvailable ? 'pointer' : 'not-allowed',
+                pointerEvents: 'auto',
+                opacity: isAvailable ? (isSelected ? 1 : 0.7) : 0.3,
+                transition: 'opacity 0.2s, transform 0.2s',
+                transform: isSelected ? 'scale(1.1)' : 'scale(1)',
+                border: isSelected ? '2px solid #4ECDC4' : '2px solid transparent',
+                borderRadius: '4px',
+                boxShadow: isSelected ? '0 0 8px rgba(78, 205, 196, 0.5)' : 'none'
+              }}
             >
               <img 
                 src={`/elements/LobbyUI/${element}@4x.png`}
                 alt={element.charAt(0).toUpperCase() + element.slice(1)}
                 style={{
-                  maxWidth: '100%',
-                  maxHeight: '100%',
-                  width: 'auto',
-                  height: 'auto',
+                  width: '100%',
+                  height: '100%',
                   objectFit: 'contain',
                   display: 'block'
                 }}
