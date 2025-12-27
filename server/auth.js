@@ -14,10 +14,13 @@ const sessionConfig = {
   secret: process.env.SESSION_SECRET || 'drawify-secret-key-change-in-production',
   resave: false,
   saveUninitialized: false,
+  proxy: process.env.NODE_ENV === 'production', // Trust proxy in production
   cookie: {
     secure: process.env.NODE_ENV === 'production',
     httpOnly: true,
-    maxAge: 24 * 60 * 60 * 1000 // 24 hours
+    maxAge: 24 * 60 * 60 * 1000, // 24 hours
+    sameSite: process.env.NODE_ENV === 'production' ? 'none' : 'lax',
+    domain: process.env.API_DOMAIN || undefined
   }
 };
 
@@ -60,15 +63,15 @@ if (process.env.GOOGLE_CLIENT_ID && process.env.GOOGLE_CLIENT_SECRET) {
   }));
 }
 
-// Initialize passport
-authRouter.use(session(sessionConfig));
+// Initialize passport (session is handled at app level in server.js)
 authRouter.use(passport.initialize());
 authRouter.use(passport.session());
 
 // CORS configuration
 const allowedOrigins = [
-  process.env.CLIENT_URL || 'http://localhost:3000',
-  'http://localhost:3000'
+  process.env.CLIENT_URL || 'http://localhost:5173',
+  'http://localhost:3000',
+  'http://localhost:5173'
 ].filter(Boolean);
 
 authRouter.use(cors({
@@ -98,7 +101,7 @@ authRouter.get('/google/callback',
   passport.authenticate('google', { failureRedirect: '/auth/failure' }),
   async (req, res) => {
     const user = req.user;
-    const redirectUrl = `${process.env.CLIENT_URL || 'http://localhost:3000'}?provider=google&name=${encodeURIComponent(user.name)}&id=${user._id}`;
+    const redirectUrl = `${process.env.CLIENT_URL || 'http://localhost:5173'}?provider=google&name=${encodeURIComponent(user.name)}&id=${user._id}`;
     res.redirect(redirectUrl);
   }
 );
@@ -250,7 +253,7 @@ authRouter.post('/login', async (req, res) => {
 });
 
 authRouter.get('/failure', (req, res) => {
-  res.redirect(`${process.env.CLIENT_URL || 'http://localhost:3000'}?auth_error=true`);
+  res.redirect(`${process.env.CLIENT_URL || 'http://localhost:5173'}?auth_error=true`);
 });
 
 authRouter.get('/logout', (req, res) => {
@@ -258,7 +261,7 @@ authRouter.get('/logout', (req, res) => {
     if (err) {
       return res.status(500).json({ error: 'Logout failed' });
     }
-    res.redirect(`${process.env.CLIENT_URL || 'http://localhost:3000'}`);
+    res.redirect(`${process.env.CLIENT_URL || 'http://localhost:5173'}`);
   });
 });
 
@@ -316,6 +319,40 @@ authRouter.post('/user/stats/update', async (req, res) => {
     res.json({ success: true, stats: user.stats });
   } catch (error) {
     res.status(500).json({ error: 'Failed to update stats' });
+  }
+});
+
+// Leaderboard - top users by totalScore
+authRouter.get('/leaderboard', async (req, res) => {
+  try {
+    // Only non-guest users have persistent stats
+    const users = await User.find({ provider: { $ne: 'guest' } })
+      .select('name nickname avatar stats createdAt provider')
+      .sort({ 'stats.totalScore': -1 })
+      .limit(50);
+
+    res.json({
+      success: true,
+      leaderboard: users.map((u, index) => ({
+        rank: index + 1,
+        id: u._id,
+        name: u.name,
+        nickname: u.nickname || u.name,
+        avatar: u.avatar,
+        provider: u.provider,
+        createdAt: u.createdAt,
+        gamesPlayed: u.stats?.gamesPlayed || 0,
+        gamesWon: u.stats?.gamesWon || 0,
+        totalScore: u.stats?.totalScore || 0,
+        winRate:
+          u.stats?.gamesPlayed && u.stats.gamesPlayed > 0
+            ? Number(((u.stats.gamesWon || 0) / u.stats.gamesPlayed) * 100).toFixed(2)
+            : '0.00'
+      }))
+    });
+  } catch (error) {
+    console.error('Error fetching leaderboard:', error);
+    res.status(500).json({ error: 'Failed to fetch leaderboard' });
   }
 });
 
