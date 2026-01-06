@@ -25,8 +25,8 @@ class GameEngine {
             LEFT: 'RIGHT',
             RIGHT: 'LEFT'
         };
-        // Match duration: 10 seconds
-        this.matchDuration = 10 * 1000; // 10 seconds in ms
+        // Match duration: 3 minutes
+        this.matchDuration = 3 * 60 * 1000; // 3 minutes in ms
         this.matchStartTime = null;
         this.gameState = {
             players: {},

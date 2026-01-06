@@ -152,9 +152,9 @@ export function GameContainer2({
   };
 
   const getTimeRemaining = (): number => {
-    if (!gameState) return 10 * 1000;
+    if (!gameState) return 3 * 60 * 1000;
     
-    const defaultTime = 10 * 1000;
+    const defaultTime = 3 * 60 * 1000;
     let timeRemaining = typeof gameState.timeRemaining === 'number'
       ? gameState.timeRemaining
       : defaultTime;
