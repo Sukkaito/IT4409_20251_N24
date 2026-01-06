@@ -14,7 +14,7 @@ export function TimerOverlay({ gameState, timerSync }: TimerOverlayProps) {
   };
 
   const getTimeRemaining = (): number => {
-    const defaultTime = 10 * 1000;
+    const defaultTime = 3 * 60 * 1000;
     let timeRemaining = typeof gameState.timeRemaining === 'number'
       ? gameState.timeRemaining
       : defaultTime;
